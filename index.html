@@ -48,7 +48,6 @@
   }
   @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
 
-  /* ---------- Header ---------- */
   header{
     display:flex;justify-content:space-between;align-items:flex-end;
     gap:16px;flex-wrap:wrap;
@@ -74,7 +73,6 @@
   .status.stale .dot{background:var(--sell);box-shadow:0 0 0 3px var(--sell-dim);}
   .status .ts{color:var(--text);font-weight:500;}
 
-  /* ---------- Breadth ladder (signature element) ---------- */
   .breadth{
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
     padding:20px 22px 16px;margin-bottom:20px;
@@ -91,7 +89,6 @@
   .rung-pct{font-family:var(--mono);font-size:13px;text-align:right;font-variant-numeric:tabular-nums;}
   .rung-pct .count{color:var(--muted-2);font-size:11px;margin-left:6px;}
 
-  /* ---------- Stat cards ---------- */
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
   .stat-card{
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
@@ -104,7 +101,6 @@
   .stat-card.hold .num{color:var(--hold);}
   .stat-card .sub{font-size:12px;color:var(--muted-2);margin-top:2px;}
 
-  /* ---------- New signal strips ---------- */
   .signals{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
   .signal-block{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;}
   .signal-block h3{
@@ -123,7 +119,6 @@
   .signal-block.sell .chip{color:var(--sell);}
   .empty-note{color:var(--muted-2);font-size:12px;font-family:var(--mono);}
 
-  /* ---------- Table controls ---------- */
   .table-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
   .panel-head{
     display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
@@ -145,7 +140,6 @@
   .search:focus{border-color:var(--muted-2);}
   .search::placeholder{color:var(--muted-2);}
 
-  /* ---------- Table ---------- */
   .table-scroll{overflow-x:auto;}
   table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12.5px;min-width:760px;}
   thead th{
@@ -171,7 +165,18 @@
   .badge.HOLD{background:var(--hold-dim);color:var(--hold);}
   .no-rows{padding:40px 16px;text-align:center;color:var(--muted-2);font-family:var(--mono);font-size:13px;}
 
-  /* ---------- EMA above/below indicator dot ---------- */
+  .tier{border-bottom:1px solid var(--line);}
+  .tier:last-child{border-bottom:none;}
+  .tier-head{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:10px 16px;background:var(--surface-2);
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .tier-head.BUY{color:var(--buy);}
+  .tier-head.SELL{color:var(--sell);}
+  .tier-head .n{color:var(--muted-2);font-weight:400;text-transform:none;letter-spacing:0;margin-left:6px;}
+  .tier-empty{padding:14px 16px;color:var(--muted-2);font-family:var(--mono);font-size:12px;}
+
   .ema-dot{
     display:inline-block;width:11px;height:11px;border-radius:50%;
     vertical-align:middle;
@@ -256,12 +261,13 @@
         <div class="tabs" id="tabs"></div>
         <input class="search" id="search" type="text" placeholder="Filter by ticker or company&hellip;" />
       </div>
-      <div class="table-scroll">
+      <div class="table-scroll" id="flatTableWrap">
         <table>
           <thead><tr id="theadRow"></tr></thead>
           <tbody id="tbody"></tbody>
         </table>
       </div>
+      <div id="tieredWrap" style="display:none;"></div>
     </section>
 
     <section class="table-panel fade-in d3" style="margin-top:20px;">
@@ -303,14 +309,10 @@
 (function(){
   "use strict";
 
-  // ---- Config ---------------------------------------------------------
   var DATA_URL = "./data/scanner.json";
   var HISTORY_URL = "./data/history.json";
   var REPO_URL = "https://github.com/parthvanawala9/nse500-ema-dashboard";
 
-  // EMA columns render as a green/red "above/below price" dot instead of
-  // the raw EMA number. type "ema" still sorts numerically by the
-  // underlying EMA value, it just displays differently.
   var COLUMNS = [
     { key: "SYMBOLL",  label: "Ticker",  type: "text"  },
     { key: "COMPANY",  label: "Company", type: "text"  },
@@ -330,6 +332,22 @@
     { key: "smallCap",label: "Small Cap" }
   ];
 
+  var TIER_GROUPS = [
+    { key: "buyAbove5",    label: "Above all 5 EMAs", cls: "BUY"  },
+    { key: "buyAbove4",    label: "Above 4 EMAs",     cls: "BUY"  },
+    { key: "sellBelow2",   label: "Below 2 EMAs",     cls: "SELL" },
+    { key: "sellBelow3",   label: "Below 3 EMAs",     cls: "SELL" },
+    { key: "sellBelow4",   label: "Below 4 EMAs",     cls: "SELL" },
+    { key: "sellBelowAll", label: "Below all 5 EMAs", cls: "SELL" }
+  ];
+
+  function capGroupTotal(group){
+    if (!group) return 0;
+    var total = 0;
+    TIER_GROUPS.forEach(function(t){ total += (group[t.key] || []).length; });
+    return total;
+  }
+
   var state = {
     data: null,
     tab: "all",
@@ -340,7 +358,6 @@
 
   var historyState = { rows: [], query: "" };
 
-  // ---- Helpers ----------------------------------------------------------
   function fmtNum(n){
     if (n === null || n === undefined || n === "" || isNaN(Number(n))) return "&mdash;";
     return Number(n).toLocaleString("en-IN", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
@@ -369,13 +386,11 @@
   }
 
   function breadthColor(fraction){
-    // 0 -> sell red, 0.5 -> hold amber, 1 -> buy green
     if (fraction >= 0.66) return "var(--buy)";
     if (fraction >= 0.4) return "var(--hold)";
     return "var(--sell)";
   }
 
-  // ---- Render: header / status -------------------------------------------
   function renderStatus(scanner){
     var updatedAt = scanner.updatedAt;
     var rel = document.getElementById("updatedRel");
@@ -388,7 +403,6 @@
     document.getElementById("repoLink").href = REPO_URL + "/blob/main/data/scanner.json";
   }
 
-  // ---- Render: breadth ladder ---------------------------------------------
   function renderBreadth(scanner){
     var total = (scanner.stats && (scanner.stats.buy + scanner.stats.sell + scanner.stats.hold)) ||
                 (scanner.stocks ? scanner.stocks.length : 0);
@@ -410,7 +424,6 @@
     document.getElementById("rungs").innerHTML = html;
   }
 
-  // ---- Render: stat cards ---------------------------------------------------
   function renderStats(scanner){
     var s = scanner.stats || { buy: 0, sell: 0, hold: 0 };
     var total = s.buy + s.sell + s.hold;
@@ -422,7 +435,6 @@
     document.getElementById("statHoldPct").textContent = pct(s.hold, total) + " of scanned";
   }
 
-  // ---- Render: new buy/sell chip strips --------------------------------------
   function renderSignals(scanner){
     function chips(list, containerId){
       var el = document.getElementById(containerId);
@@ -438,13 +450,12 @@
     chips(scanner.newSell, "newSellChips");
   }
 
-  // ---- Render: tabs -----------------------------------------------------
   function renderTabs(scanner){
     var counts = {
       all: (scanner.stocks || []).length,
-      largeCap: (scanner.largeCap || []).length,
-      midCap: (scanner.midCap || []).length,
-      smallCap: (scanner.smallCap || []).length
+      largeCap: capGroupTotal(scanner.largeCap),
+      midCap: capGroupTotal(scanner.midCap),
+      smallCap: capGroupTotal(scanner.smallCap)
     };
     var el = document.getElementById("tabs");
     el.innerHTML = TABS.map(function(t){
@@ -460,7 +471,6 @@
     });
   }
 
-  // ---- Render: table head -------------------------------------------------
   function renderTheadOnce(){
     var row = document.getElementById("theadRow");
     row.innerHTML = COLUMNS.map(function(c){
@@ -488,10 +498,9 @@
     });
   }
 
-  // ---- Render: table body ---------------------------------------------
   function currentRows(){
     var scanner = state.data;
-    var pool = state.tab === "all" ? (scanner.stocks || []) : (scanner[state.tab] || []);
+    var pool = scanner.stocks || [];
     var q = state.query.trim().toLowerCase();
     if (q){
       pool = pool.filter(function(s){
@@ -519,6 +528,19 @@
   }
 
   function renderTable(){
+    var flatWrap = document.getElementById("flatTableWrap");
+    var tieredWrap = document.getElementById("tieredWrap");
+
+    if (state.tab !== "all"){
+      flatWrap.style.display = "none";
+      tieredWrap.style.display = "block";
+      renderTiered(state.data[state.tab]);
+      return;
+    }
+
+    flatWrap.style.display = "block";
+    tieredWrap.style.display = "none";
+
     updateSortIndicators();
     var rows = currentRows();
     var body = document.getElementById("tbody");
@@ -552,7 +574,49 @@
     }).join("");
   }
 
-  // ---- Errors footer note ------------------------------------------------
+  function tierRowsHtml(list){
+    return list.map(function(s){
+      return "<tr>" +
+        '<td><span class="sym">' + escapeHtml((s.SYMBOLL || "").replace(/\.NS$/,"")) + '</span></td>' +
+        '<td><span class="company">' + escapeHtml(s.COMPANY || "") + '</span></td>' +
+        '<td>' + fmtNum(s.PRICE) + '</td>' +
+        '<td><span class="badge ' + (s.Signal || "") + '">' + (s.Signal || "") + '</span></td>' +
+      "</tr>";
+    }).join("");
+  }
+
+  function renderTiered(group){
+    var wrap = document.getElementById("tieredWrap");
+    if (!group){
+      wrap.innerHTML = '<div class="no-rows">no stocks in this category</div>';
+      return;
+    }
+    var q = state.query.trim().toLowerCase();
+    var html = "";
+    TIER_GROUPS.forEach(function(t){
+      var list = group[t.key] || [];
+      if (q){
+        list = list.filter(function(s){
+          return (s.SYMBOLL || "").toLowerCase().indexOf(q) !== -1 ||
+                 (s.COMPANY || "").toLowerCase().indexOf(q) !== -1;
+        });
+      }
+      html += '<div class="tier">' +
+                '<div class="tier-head ' + t.cls + '">' + t.label + '<span class="n">' + list.length + '</span></div>';
+      if (list.length === 0){
+        html += '<div class="tier-empty">none</div>';
+      } else {
+        html += '<div class="table-scroll"><table><thead><tr>' +
+                  '<th style="text-align:left;">Ticker</th>' +
+                  '<th style="text-align:left;">Company</th>' +
+                  '<th>Price</th><th>Signal</th>' +
+                '</tr></thead><tbody>' + tierRowsHtml(list) + '</tbody></table></div>';
+      }
+      html += '</div>';
+    });
+    wrap.innerHTML = html;
+  }
+
   function renderErrors(scanner){
     var errs = scanner.errors || [];
     var toggle = document.getElementById("errToggle");
@@ -572,7 +636,6 @@
     }).join("<br>");
   }
 
-  // ---- Render: signal history --------------------------------------------
   function flattenHistory(historyArr){
     var rows = [];
     (historyArr || []).forEach(function(day){
@@ -614,7 +677,6 @@
     }).join("");
   }
 
-  // ---- Boot ---------------------------------------------------------------
   function boot(scanner){
     state.data = scanner;
     renderStatus(scanner);
