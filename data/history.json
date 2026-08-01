@@ -1,0 +1,1737 @@
+[
+  {
+    "date": "2026-08-01",
+    "buy": [
+      {
+        "symbol": "360ONE.NS",
+        "price": 1142.9000244140625
+      },
+      {
+        "symbol": "AUBANK.NS",
+        "price": 1047.300048828125
+      },
+      {
+        "symbol": "AARTIIND.NS",
+        "price": 489.1000061035156
+      },
+      {
+        "symbol": "ACE.NS",
+        "price": 1057.199951171875
+      },
+      {
+        "symbol": "AJANTPHARM.NS",
+        "price": 3465.199951171875
+      },
+      {
+        "symbol": "ALKEM.NS",
+        "price": 5816.5
+      },
+      {
+        "symbol": "ARE&M.NS",
+        "price": 906.8499755859375
+      },
+      {
+        "symbol": "ANANTRAJ.NS",
+        "price": 624.5
+      },
+      {
+        "symbol": "ANTHEM.NS",
+        "price": 784.4000244140625
+      },
+      {
+        "symbol": "APARINDS.NS",
+        "price": 14348
+      },
+      {
+        "symbol": "APOLLOHOSP.NS",
+        "price": 8988
+      },
+      {
+        "symbol": "ASHOKLEY.NS",
+        "price": 166.17999267578125
+      },
+      {
+        "symbol": "ASIANPAINT.NS",
+        "price": 2746.199951171875
+      },
+      {
+        "symbol": "ASTERDM.NS",
+        "price": 822.1500244140625
+      },
+      {
+        "symbol": "ATHERENERG.NS",
+        "price": 1260.300048828125
+      },
+      {
+        "symbol": "ATUL.NS",
+        "price": 6736.5
+      },
+      {
+        "symbol": "AUROPHARMA.NS",
+        "price": 1576.300048828125
+      },
+      {
+        "symbol": "AIIL.NS",
+        "price": 545.9000244140625
+      },
+      {
+        "symbol": "BAJAJ-AUTO.NS",
+        "price": 11432
+      },
+      {
+        "symbol": "BAJFINANCE.NS",
+        "price": 1141.199951171875
+      },
+      {
+        "symbol": "BAJAJFINSV.NS",
+        "price": 2029.0999755859375
+      },
+      {
+        "symbol": "BALKRISIND.NS",
+        "price": 2473.5
+      },
+      {
+        "symbol": "BELRISE.NS",
+        "price": 236.72999572753906
+      },
+      {
+        "symbol": "BERGEPAINT.NS",
+        "price": 521.3499755859375
+      },
+      {
+        "symbol": "BHARATFORG.NS",
+        "price": 2199.800048828125
+      },
+      {
+        "symbol": "BHARTIARTL.NS",
+        "price": 1972
+      },
+      {
+        "symbol": "BLUEJET.NS",
+        "price": 612.4500122070312
+      },
+      {
+        "symbol": "BOSCHLTD.NS",
+        "price": 41550
+      },
+      {
+        "symbol": "CRISIL.NS",
+        "price": 4406.7998046875
+      },
+      {
+        "symbol": "CHENNPETRO.NS",
+        "price": 1260.5999755859375
+      },
+      {
+        "symbol": "CHOLAFIN.NS",
+        "price": 1849.9000244140625
+      },
+      {
+        "symbol": "CIPLA.NS",
+        "price": 1473.199951171875
+      },
+      {
+        "symbol": "COFORGE.NS",
+        "price": 1721
+      },
+      {
+        "symbol": "CAMS.NS",
+        "price": 796.1500244140625
+      },
+      {
+        "symbol": "CONCORDBIO.NS",
+        "price": 1420.800048828125
+      },
+      {
+        "symbol": "CONCOR.NS",
+        "price": 525.1500244140625
+      },
+      {
+        "symbol": "CRAFTSMAN.NS",
+        "price": 10047
+      },
+      {
+        "symbol": "CREDITACC.NS",
+        "price": 1614
+      },
+      {
+        "symbol": "DLF.NS",
+        "price": 659.2999877929688
+      },
+      {
+        "symbol": "DELHIVERY.NS",
+        "price": 481.95001220703125
+      },
+      {
+        "symbol": "DIVISLAB.NS",
+        "price": 8056
+      },
+      {
+        "symbol": "DIXON.NS",
+        "price": 14049
+      },
+      {
+        "symbol": "LALPATHLAB.NS",
+        "price": 1878.800048828125
+      },
+      {
+        "symbol": "EICHERMOT.NS",
+        "price": 7833.5
+      },
+      {
+        "symbol": "EMCURE.NS",
+        "price": 1910.9000244140625
+      },
+      {
+        "symbol": "ENDURANCE.NS",
+        "price": 2758.300048828125
+      },
+      {
+        "symbol": "ETERNAL.NS",
+        "price": 302.45001220703125
+      },
+      {
+        "symbol": "EXIDEIND.NS",
+        "price": 452.70001220703125
+      },
+      {
+        "symbol": "NYKAA.NS",
+        "price": 333.75
+      },
+      {
+        "symbol": "FEDERALBNK.NS",
+        "price": 354.1499938964844
+      },
+      {
+        "symbol": "FSL.NS",
+        "price": 302.1199951171875
+      },
+      {
+        "symbol": "GAIL.NS",
+        "price": 181.44000244140625
+      },
+      {
+        "symbol": "GABRIEL.NS",
+        "price": 1392
+      },
+      {
+        "symbol": "GLAND.NS",
+        "price": 2517
+      },
+      {
+        "symbol": "GLAXO.NS",
+        "price": 2655.39990234375
+      },
+      {
+        "symbol": "MEDANTA.NS",
+        "price": 1416.4000244140625
+      },
+      {
+        "symbol": "GODREJPROP.NS",
+        "price": 2105.699951171875
+      },
+      {
+        "symbol": "GRAPHITE.NS",
+        "price": 665.7000122070312
+      },
+      {
+        "symbol": "HEG.NS",
+        "price": 659.25
+      },
+      {
+        "symbol": "HEROMOTOCO.NS",
+        "price": 5386
+      },
+      {
+        "symbol": "HAL.NS",
+        "price": 4646.5
+      },
+      {
+        "symbol": "HONAUT.NS",
+        "price": 39505
+      },
+      {
+        "symbol": "HYUNDAI.NS",
+        "price": 2180.699951171875
+      },
+      {
+        "symbol": "ICICIBANK.NS",
+        "price": 1435.4000244140625
+      },
+      {
+        "symbol": "IDFCFIRSTB.NS",
+        "price": 84.68000030517578
+      },
+      {
+        "symbol": "IFCI.NS",
+        "price": 76.54000091552734
+      },
+      {
+        "symbol": "IIFL.NS",
+        "price": 608.6500244140625
+      },
+      {
+        "symbol": "INDIACEM.NS",
+        "price": 399.3999938964844
+      },
+      {
+        "symbol": "IEX.NS",
+        "price": 132.24000549316406
+      },
+      {
+        "symbol": "INDHOTEL.NS",
+        "price": 738.5499877929688
+      },
+      {
+        "symbol": "NAUKRI.NS",
+        "price": 1244.050048828125
+      },
+      {
+        "symbol": "JBMA.NS",
+        "price": 678.4500122070312
+      },
+      {
+        "symbol": "JSWSTEEL.NS",
+        "price": 1270
+      },
+      {
+        "symbol": "JPPOWER.NS",
+        "price": 18.290000915527344
+      },
+      {
+        "symbol": "KALYANKJIL.NS",
+        "price": 612.5999755859375
+      },
+      {
+        "symbol": "KARURVYSYA.NS",
+        "price": 342.45001220703125
+      },
+      {
+        "symbol": "KIMS.NS",
+        "price": 807
+      },
+      {
+        "symbol": "LTFOODS.NS",
+        "price": 410.3500061035156
+      },
+      {
+        "symbol": "LAURUSLABS.NS",
+        "price": 1816.199951171875
+      },
+      {
+        "symbol": "THELEELA.NS",
+        "price": 494.6000061035156
+      },
+      {
+        "symbol": "LLOYDSME.NS",
+        "price": 2047
+      },
+      {
+        "symbol": "LODHA.NS",
+        "price": 1243.949951171875
+      },
+      {
+        "symbol": "M&MFIN.NS",
+        "price": 392.54998779296875
+      },
+      {
+        "symbol": "M&M.NS",
+        "price": 3398.5
+      },
+      {
+        "symbol": "MANAPPURAM.NS",
+        "price": 368.3500061035156
+      },
+      {
+        "symbol": "MRPL.NS",
+        "price": 169.94000244140625
+      },
+      {
+        "symbol": "MARICO.NS",
+        "price": 885.3499755859375
+      },
+      {
+        "symbol": "MINDACORP.NS",
+        "price": 706.9000244140625
+      },
+      {
+        "symbol": "NH.NS",
+        "price": 2080.300048828125
+      },
+      {
+        "symbol": "NESTLEIND.NS",
+        "price": 1509.5999755859375
+      },
+      {
+        "symbol": "NETWEB.NS",
+        "price": 4524
+      },
+      {
+        "symbol": "NEULANDLAB.NS",
+        "price": 19202
+      },
+      {
+        "symbol": "OIL.NS",
+        "price": 458.6000061035156
+      },
+      {
+        "symbol": "PAYTM.NS",
+        "price": 1343
+      },
+      {
+        "symbol": "ONESOURCE.NS",
+        "price": 1688.300048828125
+      },
+      {
+        "symbol": "PGEL.NS",
+        "price": 613.3499755859375
+      },
+      {
+        "symbol": "PVRINOX.NS",
+        "price": 1131.449951171875
+      },
+      {
+        "symbol": "PAGEIND.NS",
+        "price": 41085
+      },
+      {
+        "symbol": "PARADEEP.NS",
+        "price": 147.3300018310547
+      },
+      {
+        "symbol": "PERSISTENT.NS",
+        "price": 5514.7001953125
+      },
+      {
+        "symbol": "PETRONET.NS",
+        "price": 280.75
+      },
+      {
+        "symbol": "PIDILITIND.NS",
+        "price": 1629.9000244140625
+      },
+      {
+        "symbol": "PPLPHARMA.NS",
+        "price": 195.61000061035156
+      },
+      {
+        "symbol": "PFC.NS",
+        "price": 424.3500061035156
+      },
+      {
+        "symbol": "PFOCUS.NS",
+        "price": 290.260009765625
+      },
+      {
+        "symbol": "PNB.NS",
+        "price": 112.70999908447266
+      },
+      {
+        "symbol": "RRKABEL.NS",
+        "price": 2562.199951171875
+      },
+      {
+        "symbol": "RBLBANK.NS",
+        "price": 378.04998779296875
+      },
+      {
+        "symbol": "RECLTD.NS",
+        "price": 372.95001220703125
+      },
+      {
+        "symbol": "RADICO.NS",
+        "price": 4366.60009765625
+      },
+      {
+        "symbol": "RAINBOW.NS",
+        "price": 1520.5999755859375
+      },
+      {
+        "symbol": "RKFORGE.NS",
+        "price": 651.1500244140625
+      },
+      {
+        "symbol": "REDINGTON.NS",
+        "price": 321.6499938964844
+      },
+      {
+        "symbol": "SAILIFE.NS",
+        "price": 1315.199951171875
+      },
+      {
+        "symbol": "MOTHERSON.NS",
+        "price": 150.75
+      },
+      {
+        "symbol": "SAREGAMA.NS",
+        "price": 521.4000244140625
+      },
+      {
+        "symbol": "SCI.NS",
+        "price": 291.45001220703125
+      },
+      {
+        "symbol": "SHRIRAMFIN.NS",
+        "price": 1046.699951171875
+      },
+      {
+        "symbol": "SHYAMMETL.NS",
+        "price": 1031.300048828125
+      },
+      {
+        "symbol": "SIEMENS.NS",
+        "price": 3658.800048828125
+      },
+      {
+        "symbol": "SONACOMS.NS",
+        "price": 769.4000244140625
+      },
+      {
+        "symbol": "SONATSOFTW.NS",
+        "price": 308.8999938964844
+      },
+      {
+        "symbol": "STARHEALTH.NS",
+        "price": 601
+      },
+      {
+        "symbol": "SBIN.NS",
+        "price": 1027.4000244140625
+      },
+      {
+        "symbol": "SUNPHARMA.NS",
+        "price": 1990.5
+      },
+      {
+        "symbol": "SYRMA.NS",
+        "price": 1366.800048828125
+      },
+      {
+        "symbol": "TBOTEK.NS",
+        "price": 1498.5
+      },
+      {
+        "symbol": "TVSMOTOR.NS",
+        "price": 4208.39990234375
+      },
+      {
+        "symbol": "TATACAP.NS",
+        "price": 365.3999938964844
+      },
+      {
+        "symbol": "TATATECH.NS",
+        "price": 747.6500244140625
+      },
+      {
+        "symbol": "TECHM.NS",
+        "price": 1651.300048828125
+      },
+      {
+        "symbol": "NIACL.NS",
+        "price": 173.6199951171875
+      },
+      {
+        "symbol": "TITAN.NS",
+        "price": 4875.2001953125
+      },
+      {
+        "symbol": "TORNTPHARM.NS",
+        "price": 5122.7998046875
+      },
+      {
+        "symbol": "UNOMINDA.NS",
+        "price": 1180.5
+      },
+      {
+        "symbol": "UNIONBANK.NS",
+        "price": 170.39999389648438
+      },
+      {
+        "symbol": "UNITDSPR.NS",
+        "price": 1531.9000244140625
+      },
+      {
+        "symbol": "VIJAYA.NS",
+        "price": 1360.199951171875
+      },
+      {
+        "symbol": "WELCORP.NS",
+        "price": 1650.5999755859375
+      },
+      {
+        "symbol": "WOCKPHARMA.NS",
+        "price": 1959.699951171875
+      },
+      {
+        "symbol": "ZEEL.NS",
+        "price": 112.20999908447266
+      },
+      {
+        "symbol": "ECLERX.NS",
+        "price": 1910.9000244140625
+      }
+    ],
+    "sell": [
+      {
+        "symbol": "3MINDIA.NS",
+        "price": 34940
+      },
+      {
+        "symbol": "ACC.NS",
+        "price": 1356.5
+      },
+      {
+        "symbol": "ACMESOLAR.NS",
+        "price": 360.70001220703125
+      },
+      {
+        "symbol": "AIAENG.NS",
+        "price": 4563.5
+      },
+      {
+        "symbol": "APLAPOLLO.NS",
+        "price": 1819.5
+      },
+      {
+        "symbol": "AWL.NS",
+        "price": 189.44000244140625
+      },
+      {
+        "symbol": "AADHARHFC.NS",
+        "price": 490.75
+      },
+      {
+        "symbol": "AAVAS.NS",
+        "price": 1362.5999755859375
+      },
+      {
+        "symbol": "ABBOTINDIA.NS",
+        "price": 27555
+      },
+      {
+        "symbol": "ACUTAAS.NS",
+        "price": 3104.89990234375
+      },
+      {
+        "symbol": "ADANIENSOL.NS",
+        "price": 1645.4000244140625
+      },
+      {
+        "symbol": "ADANIENT.NS",
+        "price": 3009.5
+      },
+      {
+        "symbol": "ADANIGREEN.NS",
+        "price": 1383
+      },
+      {
+        "symbol": "ADANIPORTS.NS",
+        "price": 1696.5
+      },
+      {
+        "symbol": "ADANIPOWER.NS",
+        "price": 211.30999755859375
+      },
+      {
+        "symbol": "ATGL.NS",
+        "price": 651.4500122070312
+      },
+      {
+        "symbol": "ABCAPITAL.NS",
+        "price": 394.04998779296875
+      },
+      {
+        "symbol": "ABFRL.NS",
+        "price": 58.939998626708984
+      },
+      {
+        "symbol": "ABLBL.NS",
+        "price": 94.44999694824219
+      },
+      {
+        "symbol": "ABREL.NS",
+        "price": 1378.0999755859375
+      },
+      {
+        "symbol": "ABSLAMC.NS",
+        "price": 1008.7999877929688
+      },
+      {
+        "symbol": "CPPLUS.NS",
+        "price": 3259.800048828125
+      },
+      {
+        "symbol": "AFCONS.NS",
+        "price": 273.25
+      },
+      {
+        "symbol": "ABDL.NS",
+        "price": 619.5
+      },
+      {
+        "symbol": "AMBER.NS",
+        "price": 7401
+      },
+      {
+        "symbol": "AMBUJACEM.NS",
+        "price": 432.20001220703125
+      },
+      {
+        "symbol": "ANGELONE.NS",
+        "price": 297.95001220703125
+      },
+      {
+        "symbol": "ANURAS.NS",
+        "price": 1207.800048828125
+      },
+      {
+        "symbol": "APOLLOTYRE.NS",
+        "price": 423.20001220703125
+      },
+      {
+        "symbol": "APTUS.NS",
+        "price": 261.20001220703125
+      },
+      {
+        "symbol": "ASAHIINDIA.NS",
+        "price": 869.2999877929688
+      },
+      {
+        "symbol": "ASTRAL.NS",
+        "price": 1471.9000244140625
+      },
+      {
+        "symbol": "DMART.NS",
+        "price": 3874
+      },
+      {
+        "symbol": "AXISBANK.NS",
+        "price": 1229.5
+      },
+      {
+        "symbol": "BEML.NS",
+        "price": 1750.4000244140625
+      },
+      {
+        "symbol": "BLS.NS",
+        "price": 238.75
+      },
+      {
+        "symbol": "BSE.NS",
+        "price": 3646.199951171875
+      },
+      {
+        "symbol": "BAJAJHFL.NS",
+        "price": 86.0199966430664
+      },
+      {
+        "symbol": "BANDHANBNK.NS",
+        "price": 174.1300048828125
+      },
+      {
+        "symbol": "BANKBARODA.NS",
+        "price": 242.60000610351562
+      },
+      {
+        "symbol": "BANKINDIA.NS",
+        "price": 137.9499969482422
+      },
+      {
+        "symbol": "MAHABANK.NS",
+        "price": 79.26000213623047
+      },
+      {
+        "symbol": "BATAINDIA.NS",
+        "price": 696.1500244140625
+      },
+      {
+        "symbol": "BAYERCROP.NS",
+        "price": 4226.5
+      },
+      {
+        "symbol": "BDL.NS",
+        "price": 1253.0999755859375
+      },
+      {
+        "symbol": "BEL.NS",
+        "price": 387.8500061035156
+      },
+      {
+        "symbol": "BHEL.NS",
+        "price": 407
+      },
+      {
+        "symbol": "BHARTIHEXA.NS",
+        "price": 1607.5
+      },
+      {
+        "symbol": "BIKAJI.NS",
+        "price": 643.7000122070312
+      },
+      {
+        "symbol": "BIOCON.NS",
+        "price": 425.3500061035156
+      },
+      {
+        "symbol": "BSOFT.NS",
+        "price": 302.3999938964844
+      },
+      {
+        "symbol": "BLUEDART.NS",
+        "price": 5025.89990234375
+      },
+      {
+        "symbol": "BLUESTARCO.NS",
+        "price": 1681.199951171875
+      },
+      {
+        "symbol": "BBTC.NS",
+        "price": 1497.0999755859375
+      },
+      {
+        "symbol": "FIRSTCRY.NS",
+        "price": 211.92999267578125
+      },
+      {
+        "symbol": "CCL.NS",
+        "price": 1155.300048828125
+      },
+      {
+        "symbol": "CESC.NS",
+        "price": 165.57000732421875
+      },
+      {
+        "symbol": "CGPOWER.NS",
+        "price": 863.4000244140625
+      },
+      {
+        "symbol": "CIEINDIA.NS",
+        "price": 408.6000061035156
+      },
+      {
+        "symbol": "CANFINHOME.NS",
+        "price": 816.2999877929688
+      },
+      {
+        "symbol": "CANBK.NS",
+        "price": 124.9800033569336
+      },
+      {
+        "symbol": "CAPLIPOINT.NS",
+        "price": 2516.800048828125
+      },
+      {
+        "symbol": "CGCL.NS",
+        "price": 232.3800048828125
+      },
+      {
+        "symbol": "CARBORUNIV.NS",
+        "price": 1063.800048828125
+      },
+      {
+        "symbol": "CASTROLIND.NS",
+        "price": 184.82000732421875
+      },
+      {
+        "symbol": "CEATLTD.NS",
+        "price": 3464
+      },
+      {
+        "symbol": "CEMPRO.NS",
+        "price": 1358.699951171875
+      },
+      {
+        "symbol": "CENTRALBK.NS",
+        "price": 30.969999313354492
+      },
+      {
+        "symbol": "CDSL.NS",
+        "price": 1333
+      },
+      {
+        "symbol": "CHALET.NS",
+        "price": 805
+      },
+      {
+        "symbol": "CHAMBLFERT.NS",
+        "price": 445.8500061035156
+      },
+      {
+        "symbol": "CHOLAHLDNG.NS",
+        "price": 1503.4000244140625
+      },
+      {
+        "symbol": "CUB.NS",
+        "price": 206.5
+      },
+      {
+        "symbol": "CLEAN.NS",
+        "price": 729.0499877929688
+      },
+      {
+        "symbol": "COALINDIA.NS",
+        "price": 414.1499938964844
+      },
+      {
+        "symbol": "COCHINSHIP.NS",
+        "price": 1423
+      },
+      {
+        "symbol": "COHANCE.NS",
+        "price": 425.29998779296875
+      },
+      {
+        "symbol": "COLPAL.NS",
+        "price": 2084.800048828125
+      },
+      {
+        "symbol": "CROMPTON.NS",
+        "price": 260.20001220703125
+      },
+      {
+        "symbol": "CYIENT.NS",
+        "price": 847.7000122070312
+      },
+      {
+        "symbol": "DCMSHRIRAM.NS",
+        "price": 1055.9000244140625
+      },
+      {
+        "symbol": "DOMS.NS",
+        "price": 2255
+      },
+      {
+        "symbol": "DABUR.NS",
+        "price": 426.1000061035156
+      },
+      {
+        "symbol": "DALBHARAT.NS",
+        "price": 1794.199951171875
+      },
+      {
+        "symbol": "DATAPATTNS.NS",
+        "price": 4281
+      },
+      {
+        "symbol": "DEEPAKFERT.NS",
+        "price": 1532.4000244140625
+      },
+      {
+        "symbol": "DEEPAKNTR.NS",
+        "price": 1643.9000244140625
+      },
+      {
+        "symbol": "DEVYANI.NS",
+        "price": 114.18000030517578
+      },
+      {
+        "symbol": "DRREDDY.NS",
+        "price": 1148.0999755859375
+      },
+      {
+        "symbol": "EIDPARRY.NS",
+        "price": 763.2000122070312
+      },
+      {
+        "symbol": "ELECON.NS",
+        "price": 419.04998779296875
+      },
+      {
+        "symbol": "ELGIEQUIP.NS",
+        "price": 569.1500244140625
+      },
+      {
+        "symbol": "EMAMILTD.NS",
+        "price": 403.3500061035156
+      },
+      {
+        "symbol": "ENGINERSIN.NS",
+        "price": 221.97999572753906
+      },
+      {
+        "symbol": "ERIS.NS",
+        "price": 1375.199951171875
+      },
+      {
+        "symbol": "FACT.NS",
+        "price": 815.4500122070312
+      },
+      {
+        "symbol": "FINCABLES.NS",
+        "price": 973
+      },
+      {
+        "symbol": "FORCEMOT.NS",
+        "price": 17902
+      },
+      {
+        "symbol": "FORTIS.NS",
+        "price": 948.8499755859375
+      },
+      {
+        "symbol": "GVT&D.NS",
+        "price": 4323.2998046875
+      },
+      {
+        "symbol": "GMRAIRPORT.NS",
+        "price": 103.91000366210938
+      },
+      {
+        "symbol": "GALLANTT.NS",
+        "price": 585.3499755859375
+      },
+      {
+        "symbol": "GRSE.NS",
+        "price": 2601.199951171875
+      },
+      {
+        "symbol": "GICRE.NS",
+        "price": 356.70001220703125
+      },
+      {
+        "symbol": "GILLETTE.NS",
+        "price": 7624
+      },
+      {
+        "symbol": "GLENMARK.NS",
+        "price": 2190.300048828125
+      },
+      {
+        "symbol": "GODIGIT.NS",
+        "price": 254.9499969482422
+      },
+      {
+        "symbol": "GPIL.NS",
+        "price": 249.35000610351562
+      },
+      {
+        "symbol": "GODFRYPHLP.NS",
+        "price": 2133.39990234375
+      },
+      {
+        "symbol": "GRANULES.NS",
+        "price": 833.9500122070312
+      },
+      {
+        "symbol": "GRASIM.NS",
+        "price": 3104.800048828125
+      },
+      {
+        "symbol": "GRAVITA.NS",
+        "price": 1616.4000244140625
+      },
+      {
+        "symbol": "GESHIP.NS",
+        "price": 1371.300048828125
+      },
+      {
+        "symbol": "GMDCLTD.NS",
+        "price": 564.25
+      },
+      {
+        "symbol": "HBLENGINE.NS",
+        "price": 718.7000122070312
+      },
+      {
+        "symbol": "HDBFS.NS",
+        "price": 686.3499755859375
+      },
+      {
+        "symbol": "HDFCAMC.NS",
+        "price": 2615.800048828125
+      },
+      {
+        "symbol": "HDFCBANK.NS",
+        "price": 748.1500244140625
+      },
+      {
+        "symbol": "HDFCLIFE.NS",
+        "price": 548.5
+      },
+      {
+        "symbol": "HFCL.NS",
+        "price": 184.69000244140625
+      },
+      {
+        "symbol": "HEXT.NS",
+        "price": 561.6500244140625
+      },
+      {
+        "symbol": "HINDALCO.NS",
+        "price": 970.4000244140625
+      },
+      {
+        "symbol": "HINDCOPPER.NS",
+        "price": 491.6000061035156
+      },
+      {
+        "symbol": "HINDPETRO.NS",
+        "price": 389.75
+      },
+      {
+        "symbol": "HINDUNILVR.NS",
+        "price": 2101.300048828125
+      },
+      {
+        "symbol": "HINDZINC.NS",
+        "price": 539.2000122070312
+      },
+      {
+        "symbol": "POWERINDIA.NS",
+        "price": 31250
+      },
+      {
+        "symbol": "HOMEFIRST.NS",
+        "price": 1188.199951171875
+      },
+      {
+        "symbol": "HONASA.NS",
+        "price": 445.95001220703125
+      },
+      {
+        "symbol": "HUDCO.NS",
+        "price": 197.11000061035156
+      },
+      {
+        "symbol": "ICICIGI.NS",
+        "price": 1637.9000244140625
+      },
+      {
+        "symbol": "ICICIPRULI.NS",
+        "price": 515.4000244140625
+      },
+      {
+        "symbol": "IDBI.NS",
+        "price": 83.75
+      },
+      {
+        "symbol": "IRB.NS",
+        "price": 20
+      },
+      {
+        "symbol": "IRCON.NS",
+        "price": 125.98999786376953
+      },
+      {
+        "symbol": "ITCHOTELS.NS",
+        "price": 162.3699951171875
+      },
+      {
+        "symbol": "ITC.NS",
+        "price": 281
+      },
+      {
+        "symbol": "ITI.NS",
+        "price": 273.45001220703125
+      },
+      {
+        "symbol": "INDIAMART.NS",
+        "price": 1799.800048828125
+      },
+      {
+        "symbol": "INDIANB.NS",
+        "price": 827.25
+      },
+      {
+        "symbol": "IOC.NS",
+        "price": 140.1699981689453
+      },
+      {
+        "symbol": "IOB.NS",
+        "price": 33.72999954223633
+      },
+      {
+        "symbol": "IRCTC.NS",
+        "price": 493.1499938964844
+      },
+      {
+        "symbol": "IRFC.NS",
+        "price": 89.1500015258789
+      },
+      {
+        "symbol": "IREDA.NS",
+        "price": 119.58999633789062
+      },
+      {
+        "symbol": "IGL.NS",
+        "price": 151.97999572753906
+      },
+      {
+        "symbol": "INDUSTOWER.NS",
+        "price": 392.8999938964844
+      },
+      {
+        "symbol": "INFY.NS",
+        "price": 1130.0999755859375
+      },
+      {
+        "symbol": "INOXWIND.NS",
+        "price": 78.13999938964844
+      },
+      {
+        "symbol": "INTELLECT.NS",
+        "price": 705.5
+      },
+      {
+        "symbol": "INDIGO.NS",
+        "price": 5171
+      },
+      {
+        "symbol": "IGIL.NS",
+        "price": 345.45001220703125
+      },
+      {
+        "symbol": "IKS.NS",
+        "price": 1782.300048828125
+      },
+      {
+        "symbol": "IPCALAB.NS",
+        "price": 1758.800048828125
+      },
+      {
+        "symbol": "JKCEMENT.NS",
+        "price": 5444
+      },
+      {
+        "symbol": "JKTYRE.NS",
+        "price": 399.75
+      },
+      {
+        "symbol": "JMFINANCIL.NS",
+        "price": 122.16000366210938
+      },
+      {
+        "symbol": "JSWCEMENT.NS",
+        "price": 131.2899932861328
+      },
+      {
+        "symbol": "JSWDULUX.NS",
+        "price": 2953.39990234375
+      },
+      {
+        "symbol": "JSWENERGY.NS",
+        "price": 543.7000122070312
+      },
+      {
+        "symbol": "JSWINFRA.NS",
+        "price": 319.04998779296875
+      },
+      {
+        "symbol": "JAINREC.NS",
+        "price": 348.20001220703125
+      },
+      {
+        "symbol": "J&KBANK.NS",
+        "price": 153.74000549316406
+      },
+      {
+        "symbol": "JINDALSAW.NS",
+        "price": 254.3000030517578
+      },
+      {
+        "symbol": "JINDALSTEL.NS",
+        "price": 1093.699951171875
+      },
+      {
+        "symbol": "JUBLFOOD.NS",
+        "price": 438.25
+      },
+      {
+        "symbol": "JUBLPHARMA.NS",
+        "price": 961.6500244140625
+      },
+      {
+        "symbol": "JWL.NS",
+        "price": 259.3500061035156
+      },
+      {
+        "symbol": "KPRMILL.NS",
+        "price": 1033.300048828125
+      },
+      {
+        "symbol": "KPITTECH.NS",
+        "price": 598.4000244140625
+      },
+      {
+        "symbol": "KAJARIACER.NS",
+        "price": 1192
+      },
+      {
+        "symbol": "KPIL.NS",
+        "price": 1282.699951171875
+      },
+      {
+        "symbol": "KEC.NS",
+        "price": 468.75
+      },
+      {
+        "symbol": "KIRLOSENG.NS",
+        "price": 2189.800048828125
+      },
+      {
+        "symbol": "KOTAKBANK.NS",
+        "price": 389.3999938964844
+      },
+      {
+        "symbol": "LTF.NS",
+        "price": 306.25
+      },
+      {
+        "symbol": "LGEINDIA.NS",
+        "price": 1490.5
+      },
+      {
+        "symbol": "LICHSGFIN.NS",
+        "price": 523.0999755859375
+      },
+      {
+        "symbol": "LT.NS",
+        "price": 3938.89990234375
+      },
+      {
+        "symbol": "LATENTVIEW.NS",
+        "price": 310.45001220703125
+      },
+      {
+        "symbol": "LEMONTREE.NS",
+        "price": 109.19999694824219
+      },
+      {
+        "symbol": "LICI.NS",
+        "price": 424.70001220703125
+      },
+      {
+        "symbol": "LINDEINDIA.NS",
+        "price": 6637
+      },
+      {
+        "symbol": "LUPIN.NS",
+        "price": 2421.199951171875
+      },
+      {
+        "symbol": "MMTC.NS",
+        "price": 60.09000015258789
+      },
+      {
+        "symbol": "MANKIND.NS",
+        "price": 2469.60009765625
+      },
+      {
+        "symbol": "MFSL.NS",
+        "price": 1510.800048828125
+      },
+      {
+        "symbol": "MAXHEALTH.NS",
+        "price": 1098.5
+      },
+      {
+        "symbol": "MAZDOCK.NS",
+        "price": 2381.800048828125
+      },
+      {
+        "symbol": "MOTILALOFS.NS",
+        "price": 851.9500122070312
+      },
+      {
+        "symbol": "MCX.NS",
+        "price": 2692.199951171875
+      },
+      {
+        "symbol": "MUTHOOTFIN.NS",
+        "price": 3119.60009765625
+      },
+      {
+        "symbol": "NATCOPHARM.NS",
+        "price": 917
+      },
+      {
+        "symbol": "NBCC.NS",
+        "price": 94.80000305175781
+      },
+      {
+        "symbol": "NCC.NS",
+        "price": 140.91000366210938
+      },
+      {
+        "symbol": "NHPC.NS",
+        "price": 78.7300033569336
+      },
+      {
+        "symbol": "NLCINDIA.NS",
+        "price": 291.8999938964844
+      },
+      {
+        "symbol": "NMDC.NS",
+        "price": 85.04000091552734
+      },
+      {
+        "symbol": "NSLNISP.NS",
+        "price": 43.02000045776367
+      },
+      {
+        "symbol": "NTPCGREEN.NS",
+        "price": 90.02999877929688
+      },
+      {
+        "symbol": "NTPC.NS",
+        "price": 347.25
+      },
+      {
+        "symbol": "NATIONALUM.NS",
+        "price": 350.04998779296875
+      },
+      {
+        "symbol": "NAVA.NS",
+        "price": 553.1500244140625
+      },
+      {
+        "symbol": "NAVINFLUOR.NS",
+        "price": 7386.5
+      },
+      {
+        "symbol": "NAM-INDIA.NS",
+        "price": 1146.9000244140625
+      },
+      {
+        "symbol": "NIVABUPA.NS",
+        "price": 85.91999816894531
+      },
+      {
+        "symbol": "NUVAMA.NS",
+        "price": 1793.4000244140625
+      },
+      {
+        "symbol": "NUVOCO.NS",
+        "price": 344.6499938964844
+      },
+      {
+        "symbol": "OBEROIRLTY.NS",
+        "price": 1814.4000244140625
+      },
+      {
+        "symbol": "ONGC.NS",
+        "price": 242.52999877929688
+      },
+      {
+        "symbol": "OLAELEC.NS",
+        "price": 38.65999984741211
+      },
+      {
+        "symbol": "OLECTRA.NS",
+        "price": 1324.199951171875
+      },
+      {
+        "symbol": "POLICYBZR.NS",
+        "price": 1593.5
+      },
+      {
+        "symbol": "PCBL.NS",
+        "price": 317.8999938964844
+      },
+      {
+        "symbol": "PIIND.NS",
+        "price": 2751.199951171875
+      },
+      {
+        "symbol": "PNBHOUSING.NS",
+        "price": 1033.0999755859375
+      },
+      {
+        "symbol": "PATANJALI.NS",
+        "price": 356.3500061035156
+      },
+      {
+        "symbol": "PHOENIXLTD.NS",
+        "price": 1887.9000244140625
+      },
+      {
+        "symbol": "POLYCAB.NS",
+        "price": 8896
+      },
+      {
+        "symbol": "POONAWALLA.NS",
+        "price": 463.54998779296875
+      },
+      {
+        "symbol": "POWERGRID.NS",
+        "price": 284.25
+      },
+      {
+        "symbol": "PREMIERENE.NS",
+        "price": 982.7000122070312
+      },
+      {
+        "symbol": "PRESTIGE.NS",
+        "price": 1594.800048828125
+      },
+      {
+        "symbol": "RHIM.NS",
+        "price": 390.54998779296875
+      },
+      {
+        "symbol": "RVNL.NS",
+        "price": 225.47999572753906
+      },
+      {
+        "symbol": "RAILTEL.NS",
+        "price": 284.5
+      },
+      {
+        "symbol": "RELIANCE.NS",
+        "price": 1307.800048828125
+      },
+      {
+        "symbol": "RPOWER.NS",
+        "price": 23.40999984741211
+      },
+      {
+        "symbol": "SBFC.NS",
+        "price": 90.16000366210938
+      },
+      {
+        "symbol": "SJVN.NS",
+        "price": 68.62000274658203
+      },
+      {
+        "symbol": "SRF.NS",
+        "price": 2604.800048828125
+      },
+      {
+        "symbol": "SAMMAANCAP.NS",
+        "price": 162.42999267578125
+      },
+      {
+        "symbol": "SAPPHIRE.NS",
+        "price": 185.11000061035156
+      },
+      {
+        "symbol": "SARDAEN.NS",
+        "price": 511.79998779296875
+      },
+      {
+        "symbol": "SCHAEFFLER.NS",
+        "price": 4040.10009765625
+      },
+      {
+        "symbol": "SCHNEIDER.NS",
+        "price": 1298.4000244140625
+      },
+      {
+        "symbol": "SHREECEM.NS",
+        "price": 26455
+      },
+      {
+        "symbol": "ENRIN.NS",
+        "price": 3121.699951171875
+      },
+      {
+        "symbol": "SIGNATURE.NS",
+        "price": 813.4500122070312
+      },
+      {
+        "symbol": "SOBHA.NS",
+        "price": 1372.199951171875
+      },
+      {
+        "symbol": "SOLARINDS.NS",
+        "price": 18053
+      },
+      {
+        "symbol": "SAIL.NS",
+        "price": 169.02999877929688
+      },
+      {
+        "symbol": "SUMICHEM.NS",
+        "price": 508.3999938964844
+      },
+      {
+        "symbol": "SUNTV.NS",
+        "price": 511.5
+      },
+      {
+        "symbol": "SUNDARMFIN.NS",
+        "price": 4490.89990234375
+      },
+      {
+        "symbol": "SUPREMEIND.NS",
+        "price": 3459.89990234375
+      },
+      {
+        "symbol": "SPLPETRO.NS",
+        "price": 703.6500244140625
+      },
+      {
+        "symbol": "SUZLON.NS",
+        "price": 48.0099983215332
+      },
+      {
+        "symbol": "SWANCORP.NS",
+        "price": 306.6499938964844
+      },
+      {
+        "symbol": "SYNGENE.NS",
+        "price": 385.8999938964844
+      },
+      {
+        "symbol": "TATACHEM.NS",
+        "price": 670.2999877929688
+      },
+      {
+        "symbol": "TATACOMM.NS",
+        "price": 1756.4000244140625
+      },
+      {
+        "symbol": "TATACONSUM.NS",
+        "price": 1083.0999755859375
+      },
+      {
+        "symbol": "TATAELXSI.NS",
+        "price": 3672.89990234375
+      },
+      {
+        "symbol": "TMPV.NS",
+        "price": 339.75
+      },
+      {
+        "symbol": "TATAPOWER.NS",
+        "price": 380.70001220703125
+      },
+      {
+        "symbol": "TATASTEEL.NS",
+        "price": 189.69000244140625
+      },
+      {
+        "symbol": "TTML.NS",
+        "price": 39.95000076293945
+      },
+      {
+        "symbol": "TECHNOE.NS",
+        "price": 967.2000122070312
+      },
+      {
+        "symbol": "TEGA.NS",
+        "price": 1477.4000244140625
+      },
+      {
+        "symbol": "TEJASNET.NS",
+        "price": 513
+      },
+      {
+        "symbol": "RAMCOCEM.NS",
+        "price": 915
+      },
+      {
+        "symbol": "THERMAX.NS",
+        "price": 4306
+      },
+      {
+        "symbol": "TIMKEN.NS",
+        "price": 3097.60009765625
+      },
+      {
+        "symbol": "TITAGARH.NS",
+        "price": 824.7999877929688
+      },
+      {
+        "symbol": "TORNTPOWER.NS",
+        "price": 1423.5
+      },
+      {
+        "symbol": "TARIL.NS",
+        "price": 296.5
+      },
+      {
+        "symbol": "TRAVELFOOD.NS",
+        "price": 1279.199951171875
+      },
+      {
+        "symbol": "TRIDENT.NS",
+        "price": 24.709999084472656
+      },
+      {
+        "symbol": "TRITURBINE.NS",
+        "price": 607.5
+      },
+      {
+        "symbol": "TIINDIA.NS",
+        "price": 2753
+      },
+      {
+        "symbol": "UCOBANK.NS",
+        "price": 25.81999969482422
+      },
+      {
+        "symbol": "UPL.NS",
+        "price": 604.2999877929688
+      },
+      {
+        "symbol": "UTIAMC.NS",
+        "price": 909.2999877929688
+      },
+      {
+        "symbol": "URBANCO.NS",
+        "price": 129.38999938964844
+      },
+      {
+        "symbol": "VTL.NS",
+        "price": 585.7999877929688
+      },
+      {
+        "symbol": "VBL.NS",
+        "price": 442.29998779296875
+      },
+      {
+        "symbol": "VEDL.NS",
+        "price": 264.25
+      },
+      {
+        "symbol": "VMM.NS",
+        "price": 107.0999984741211
+      },
+      {
+        "symbol": "IDEA.NS",
+        "price": 13.010000228881836
+      },
+      {
+        "symbol": "VOLTAS.NS",
+        "price": 1328.9000244140625
+      },
+      {
+        "symbol": "WAAREEENER.NS",
+        "price": 2680.199951171875
+      },
+      {
+        "symbol": "WELSPUNLIV.NS",
+        "price": 155.94000244140625
+      },
+      {
+        "symbol": "WHIRLPOOL.NS",
+        "price": 802.9000244140625
+      },
+      {
+        "symbol": "WIPRO.NS",
+        "price": 183.64999389648438
+      },
+      {
+        "symbol": "YESBANK.NS",
+        "price": 22.770000457763672
+      },
+      {
+        "symbol": "ZENTEC.NS",
+        "price": 1615.4000244140625
+      },
+      {
+        "symbol": "ZENSARTECH.NS",
+        "price": 520.9000244140625
+      },
+      {
+        "symbol": "ZYDUSLIFE.NS",
+        "price": 1115.0999755859375
+      },
+      {
+        "symbol": "ZYDUSWELL.NS",
+        "price": 566
+      }
+    ]
+  }
+]
