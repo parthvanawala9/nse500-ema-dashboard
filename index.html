@@ -171,6 +171,15 @@
   .badge.HOLD{background:var(--hold-dim);color:var(--hold);}
   .no-rows{padding:40px 16px;text-align:center;color:var(--muted-2);font-family:var(--mono);font-size:13px;}
 
+  /* ---------- EMA above/below indicator dot ---------- */
+  .ema-dot{
+    display:inline-block;width:11px;height:11px;border-radius:50%;
+    vertical-align:middle;
+  }
+  .ema-dot.above{background:var(--buy);box-shadow:0 0 0 3px var(--buy-dim);}
+  .ema-dot.below{background:var(--sell);box-shadow:0 0 0 3px var(--sell-dim);}
+  .ema-dot.na{background:var(--muted-2);box-shadow:0 0 0 3px var(--surface-2);}
+
   footer{
     margin-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
     font-family:var(--mono);font-size:11px;color:var(--muted-2);
@@ -255,6 +264,28 @@
       </div>
     </section>
 
+    <section class="table-panel fade-in d3" style="margin-top:20px;">
+      <div class="panel-head">
+        <div style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);">
+          Signal history &middot; last <span id="historyDaysCount">0</span> days
+        </div>
+        <input class="search" id="historySearch" type="text" placeholder="Filter by ticker&hellip;" />
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:left;">Date</th>
+              <th style="text-align:left;">Ticker</th>
+              <th>Signal</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="historyTbody"></tbody>
+        </table>
+      </div>
+    </section>
+
     <footer>
       <div>
         Source: <a id="repoLink" href="#" target="_blank" rel="noopener">data/scanner.json</a>
@@ -274,17 +305,21 @@
 
   // ---- Config ---------------------------------------------------------
   var DATA_URL = "./data/scanner.json";
+  var HISTORY_URL = "./data/history.json";
   var REPO_URL = "https://github.com/parthvanawala9/nse500-ema-dashboard";
 
+  // EMA columns render as a green/red "above/below price" dot instead of
+  // the raw EMA number. type "ema" still sorts numerically by the
+  // underlying EMA value, it just displays differently.
   var COLUMNS = [
     { key: "SYMBOLL",  label: "Ticker",  type: "text"  },
     { key: "COMPANY",  label: "Company", type: "text"  },
     { key: "PRICE",    label: "Price",   type: "num"   },
-    { key: "EMA10",    label: "EMA10",   type: "num"   },
-    { key: "EMA20",    label: "EMA20",   type: "num"   },
-    { key: "EMA50",    label: "EMA50",   type: "num"   },
-    { key: "EMA100",   label: "EMA100",  type: "num"   },
-    { key: "EMA200",   label: "EMA200",  type: "num"   },
+    { key: "EMA10",    label: "EMA10",   type: "ema"   },
+    { key: "EMA20",    label: "EMA20",   type: "ema"   },
+    { key: "EMA50",    label: "EMA50",   type: "ema"   },
+    { key: "EMA100",   label: "EMA100",  type: "ema"   },
+    { key: "EMA200",   label: "EMA200",  type: "ema"   },
     { key: "Signal",   label: "Signal",  type: "badge" }
   ];
 
@@ -302,6 +337,8 @@
     sortKey: "SYMBOLL",
     sortDir: 1
   };
+
+  var historyState = { rows: [], query: "" };
 
   // ---- Helpers ----------------------------------------------------------
   function fmtNum(n){
@@ -387,7 +424,7 @@
 
   // ---- Render: new buy/sell chip strips --------------------------------------
   function renderSignals(scanner){
-    function chips(list, containerId, cls){
+    function chips(list, containerId){
       var el = document.getElementById(containerId);
       if (!list || list.length === 0){
         el.innerHTML = '<span class="empty-note">none today</span>';
@@ -466,7 +503,7 @@
     var col = COLUMNS.filter(function(c){ return c.key === key; })[0];
     pool = pool.slice().sort(function(a, b){
       var av = a[key], bv = b[key];
-      if (col && col.type === "num"){
+      if (col && (col.type === "num" || col.type === "ema")){
         av = Number(av); bv = Number(bv);
         if (isNaN(av)) av = -Infinity;
         if (isNaN(bv)) bv = -Infinity;
@@ -501,6 +538,15 @@
           var sig = s.Signal || "HOLD";
           return '<td><span class="badge ' + sig + '">' + sig + '</span></td>';
         }
+        if (c.type === "ema"){
+          var price = Number(s.PRICE);
+          var emaVal = Number(s[c.key]);
+          var cls = "na";
+          if (!isNaN(price) && !isNaN(emaVal)){
+            cls = price > emaVal ? "above" : (price < emaVal ? "below" : "na");
+          }
+          return '<td><span class="ema-dot ' + cls + '" title="' + fmtNum(s[c.key]) + '"></span></td>';
+        }
         return '<td>' + fmtNum(s[c.key]) + '</td>';
       }).join("") + "</tr>";
     }).join("");
@@ -524,6 +570,48 @@
     box.innerHTML = errs.map(function(e){
       return escapeHtml(e.symbol || "?") + " &mdash; " + escapeHtml(e.reason || "unknown error");
     }).join("<br>");
+  }
+
+  // ---- Render: signal history --------------------------------------------
+  function flattenHistory(historyArr){
+    var rows = [];
+    (historyArr || []).forEach(function(day){
+      (day.buy || []).forEach(function(e){
+        rows.push({ date: day.date, symbol: e.symbol, signal: "BUY", price: e.price });
+      });
+      (day.sell || []).forEach(function(e){
+        rows.push({ date: day.date, symbol: e.symbol, signal: "SELL", price: e.price });
+      });
+    });
+    rows.sort(function(a, b){
+      if (a.date < b.date) return 1;
+      if (a.date > b.date) return -1;
+      return 0;
+    });
+    return rows;
+  }
+
+  function renderHistory(){
+    var q = historyState.query.trim().toLowerCase();
+    var rows = historyState.rows;
+    if (q){
+      rows = rows.filter(function(r){
+        return r.symbol.toLowerCase().indexOf(q) !== -1;
+      });
+    }
+    var body = document.getElementById("historyTbody");
+    if (!rows.length){
+      body.innerHTML = '<tr><td colspan="4"><div class="no-rows">no history to show yet</div></td></tr>';
+      return;
+    }
+    body.innerHTML = rows.map(function(r){
+      return "<tr>" +
+        '<td style="text-align:left;">' + escapeHtml(r.date) + '</td>' +
+        '<td style="text-align:left;" class="sym">' + escapeHtml((r.symbol || "").replace(/\.NS$/,"")) + '</td>' +
+        '<td><span class="badge ' + r.signal + '">' + r.signal + '</span></td>' +
+        '<td>' + fmtNum(r.price) + '</td>' +
+      "</tr>";
+    }).join("");
   }
 
   // ---- Boot ---------------------------------------------------------------
@@ -554,15 +642,29 @@
     el.textContent = msg;
   }
 
-  fetch(DATA_URL + "?t=" + Date.now())
-    .then(function(res){
+  Promise.all([
+    fetch(DATA_URL + "?t=" + Date.now()).then(function(res){
       if (!res.ok) throw new Error("HTTP " + res.status + " fetching " + DATA_URL);
       return res.json();
-    })
-    .then(boot)
-    .catch(function(err){
-      showError("Could not load scanner.json \u2014 " + err.message + ". Check that data/scanner.json exists in this repo and GitHub Pages is enabled.");
+    }),
+    fetch(HISTORY_URL + "?t=" + Date.now()).then(function(res){
+      if (!res.ok) return [];
+      return res.json();
+    }).catch(function(){ return []; })
+  ]).then(function(results){
+    boot(results[0]);
+
+    var historyArr = Array.isArray(results[1]) ? results[1] : [];
+    historyState.rows = flattenHistory(historyArr);
+    document.getElementById("historyDaysCount").textContent = historyArr.length;
+    renderHistory();
+    document.getElementById("historySearch").addEventListener("input", function(e){
+      historyState.query = e.target.value;
+      renderHistory();
     });
+  }).catch(function(err){
+    showError("Could not load scanner.json \u2014 " + err.message + ". Check that data/scanner.json exists in this repo and GitHub Pages is enabled.");
+  });
 })();
 </script>
 </body>
