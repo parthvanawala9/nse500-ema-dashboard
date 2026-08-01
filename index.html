@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NSE500 EMA Scanner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0d11;
+    --surface:#12161c;
+    --surface-2:#171c23;
+    --line:#1e252d;
+    --text:#e7ebee;
+    --muted:#7b8794;
+    --muted-2:#54606c;
+    --buy:#00d67d;
+    --buy-dim:#0a3325;
+    --sell:#ff4d5e;
+    --sell-dim:#3a1418;
+    --hold:#f2b84b;
+    --hold-dim:#3a2c10;
+    --radius:6px;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --sans: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #10151b 0%, transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px;}
+
+  @media (prefers-reduced-motion: no-preference){
+    .fade-in{animation:fadeIn .5s ease both;}
+    .fade-in.d1{animation-delay:.05s;}
+    .fade-in.d2{animation-delay:.1s;}
+    .fade-in.d3{animation-delay:.15s;}
+  }
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+  /* ---------- Header ---------- */
+  header{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    gap:16px;flex-wrap:wrap;
+    padding-bottom:20px;margin-bottom:24px;
+    border-bottom:1px solid var(--line);
+  }
+  .brand-eyebrow{
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    color:var(--muted-2);text-transform:uppercase;margin:0 0 6px;
+  }
+  h1{
+    font-family:var(--mono);font-weight:600;font-size:clamp(22px,3.4vw,32px);
+    letter-spacing:-0.01em;margin:0;
+  }
+  h1 .accent{color:var(--buy);}
+  .status{
+    text-align:right;font-family:var(--mono);font-size:12px;color:var(--muted);
+  }
+  .status .dot{
+    display:inline-block;width:7px;height:7px;border-radius:50%;
+    background:var(--buy);margin-right:6px;box-shadow:0 0 0 3px var(--buy-dim);
+  }
+  .status.stale .dot{background:var(--sell);box-shadow:0 0 0 3px var(--sell-dim);}
+  .status .ts{color:var(--text);font-weight:500;}
+
+  /* ---------- Breadth ladder (signature element) ---------- */
+  .breadth{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px 16px;margin-bottom:20px;
+  }
+  .breadth-title{
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 16px;display:flex;justify-content:space-between;
+  }
+  .rung{display:grid;grid-template-columns:64px 1fr 96px;align-items:center;gap:14px;padding:7px 0;}
+  .rung + .rung{border-top:1px solid var(--line);}
+  .rung-label{font-family:var(--mono);font-size:13px;color:var(--muted);}
+  .rung-track{height:8px;background:var(--surface-2);border-radius:4px;overflow:hidden;position:relative;}
+  .rung-fill{height:100%;border-radius:4px;transition:width .6s cubic-bezier(.2,.7,.3,1);}
+  .rung-pct{font-family:var(--mono);font-size:13px;text-align:right;font-variant-numeric:tabular-nums;}
+  .rung-pct .count{color:var(--muted-2);font-size:11px;margin-left:6px;}
+
+  /* ---------- Stat cards ---------- */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
+  .stat-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px 18px;
+  }
+  .stat-card .label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .stat-card .num{font-family:var(--mono);font-weight:600;font-size:30px;margin-top:6px;font-variant-numeric:tabular-nums;}
+  .stat-card.buy .num{color:var(--buy);}
+  .stat-card.sell .num{color:var(--sell);}
+  .stat-card.hold .num{color:var(--hold);}
+  .stat-card .sub{font-size:12px;color:var(--muted-2);margin-top:2px;}
+
+  /* ---------- New signal strips ---------- */
+  .signals{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+  .signal-block{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;}
+  .signal-block h3{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    margin:0 0 10px;display:flex;align-items:center;gap:6px;
+  }
+  .signal-block.buy h3{color:var(--buy);}
+  .signal-block.sell h3{color:var(--sell);}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;max-height:98px;overflow-y:auto;}
+  .chip{
+    font-family:var(--mono);font-size:12px;padding:5px 9px;border-radius:4px;
+    background:var(--surface-2);border:1px solid var(--line);white-space:nowrap;
+  }
+  .chip b{font-weight:600;}
+  .signal-block.buy .chip{color:var(--buy);}
+  .signal-block.sell .chip{color:var(--sell);}
+  .empty-note{color:var(--muted-2);font-size:12px;font-family:var(--mono);}
+
+  /* ---------- Table controls ---------- */
+  .table-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+  .panel-head{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+    padding:14px 16px;border-bottom:1px solid var(--line);
+  }
+  .tabs{display:flex;gap:4px;}
+  .tab{
+    font-family:var(--mono);font-size:12px;padding:7px 12px;border-radius:5px;
+    color:var(--muted);cursor:pointer;user-select:none;border:1px solid transparent;
+  }
+  .tab:hover{color:var(--text);}
+  .tab.active{background:var(--surface-2);color:var(--text);border-color:var(--line);}
+  .tab .n{color:var(--muted-2);margin-left:5px;}
+  .search{
+    font-family:var(--mono);font-size:12px;background:var(--surface-2);
+    border:1px solid var(--line);border-radius:5px;padding:7px 10px;color:var(--text);
+    width:180px;outline:none;
+  }
+  .search:focus{border-color:var(--muted-2);}
+  .search::placeholder{color:var(--muted-2);}
+
+  /* ---------- Table ---------- */
+  .table-scroll{overflow-x:auto;}
+  table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12.5px;min-width:760px;}
+  thead th{
+    text-align:right;padding:10px 14px;color:var(--muted);font-weight:500;
+    letter-spacing:.04em;cursor:pointer;white-space:nowrap;user-select:none;
+    border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);
+  }
+  thead th:first-child,thead th:nth-child(2){text-align:left;}
+  thead th.sorted{color:var(--text);}
+  thead th .arrow{font-size:10px;margin-left:3px;color:var(--muted-2);}
+  tbody td{padding:9px 14px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line);}
+  tbody td:first-child,tbody td:nth-child(2){text-align:left;}
+  tbody tr:hover{background:var(--surface-2);}
+  tbody tr:last-child td{border-bottom:none;}
+  .sym{font-weight:600;}
+  .company{color:var(--muted);font-size:11.5px;}
+  .badge{
+    display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;
+    letter-spacing:.03em;
+  }
+  .badge.BUY{background:var(--buy-dim);color:var(--buy);}
+  .badge.SELL{background:var(--sell-dim);color:var(--sell);}
+  .badge.HOLD{background:var(--hold-dim);color:var(--hold);}
+  .no-rows{padding:40px 16px;text-align:center;color:var(--muted-2);font-family:var(--mono);font-size:13px;}
+
+  footer{
+    margin-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-family:var(--mono);font-size:11px;color:var(--muted-2);
+  }
+  footer a{text-decoration:underline;text-underline-offset:2px;}
+  .err-toggle{cursor:pointer;text-decoration:underline;text-underline-offset:2px;}
+  #errBox{
+    display:none;margin-top:10px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);padding:12px 14px;font-family:var(--mono);font-size:11.5px;
+    color:var(--muted);max-height:180px;overflow-y:auto;
+  }
+
+  #loadState, #errorState{
+    font-family:var(--mono);color:var(--muted);padding:60px 0;text-align:center;font-size:13px;
+  }
+  #errorState{color:var(--sell);display:none;}
+  #app{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="loadState">loading scanner.json&hellip;</div>
+  <div id="errorState"></div>
+
+  <div id="app">
+    <header class="fade-in">
+      <div>
+        <p class="brand-eyebrow">NSE 500 &middot; daily close &middot; EMA 10/20/50/100/200</p>
+        <h1>EMA<span class="accent">.</span>SCANNER</h1>
+      </div>
+      <div class="status" id="statusBox">
+        <div><span class="dot"></span><span id="updatedRel">&mdash;</span></div>
+        <div class="ts" id="updatedAbs">&mdash;</div>
+      </div>
+    </header>
+
+    <section class="breadth fade-in d1">
+      <p class="breadth-title"><span>Market breadth &mdash; % of scanned stocks above each EMA</span><span id="breadthTotal"></span></p>
+      <div id="rungs"></div>
+    </section>
+
+    <section class="stats fade-in d1">
+      <div class="stat-card buy">
+        <div class="label">Buy</div>
+        <div class="num" id="statBuy">0</div>
+        <div class="sub" id="statBuyPct">&mdash;</div>
+      </div>
+      <div class="stat-card sell">
+        <div class="label">Sell</div>
+        <div class="num" id="statSell">0</div>
+        <div class="sub" id="statSellPct">&mdash;</div>
+      </div>
+      <div class="stat-card hold">
+        <div class="label">Hold</div>
+        <div class="num" id="statHold">0</div>
+        <div class="sub" id="statHoldPct">&mdash;</div>
+      </div>
+    </section>
+
+    <section class="signals fade-in d2">
+      <div class="signal-block buy">
+        <h3>&uarr; New buy today</h3>
+        <div class="chips" id="newBuyChips"></div>
+      </div>
+      <div class="signal-block sell">
+        <h3>&darr; New sell today</h3>
+        <div class="chips" id="newSellChips"></div>
+      </div>
+    </section>
+
+    <section class="table-panel fade-in d3">
+      <div class="panel-head">
+        <div class="tabs" id="tabs"></div>
+        <input class="search" id="search" type="text" placeholder="Filter by ticker or company&hellip;" />
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr id="theadRow"></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        Source: <a id="repoLink" href="#" target="_blank" rel="noopener">data/scanner.json</a>
+        &nbsp;&middot;&nbsp;
+        <span class="err-toggle" id="errToggle" style="display:none;"></span>
+      </div>
+      <div>Signals are informational only, not investment advice.</div>
+    </footer>
+    <div id="errBox"></div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- Config ---------------------------------------------------------
+  var DATA_URL = "./data/scanner.json";
+  var REPO_URL = "https://github.com/parthvanawala9/nse500-ema-dashboard";
+
+  var COLUMNS = [
+    { key: "SYMBOLL",  label: "Ticker",  type: "text"  },
+    { key: "COMPANY",  label: "Company", type: "text"  },
+    { key: "PRICE",    label: "Price",   type: "num"   },
+    { key: "EMA10",    label: "EMA10",   type: "num"   },
+    { key: "EMA20",    label: "EMA20",   type: "num"   },
+    { key: "EMA50",    label: "EMA50",   type: "num"   },
+    { key: "EMA100",   label: "EMA100",  type: "num"   },
+    { key: "EMA200",   label: "EMA200",  type: "num"   },
+    { key: "Signal",   label: "Signal",  type: "badge" }
+  ];
+
+  var TABS = [
+    { key: "all",     label: "All"       },
+    { key: "largeCap",label: "Large Cap" },
+    { key: "midCap",  label: "Mid Cap"   },
+    { key: "smallCap",label: "Small Cap" }
+  ];
+
+  var state = {
+    data: null,
+    tab: "all",
+    query: "",
+    sortKey: "SYMBOLL",
+    sortDir: 1
+  };
+
+  // ---- Helpers ----------------------------------------------------------
+  function fmtNum(n){
+    if (n === null || n === undefined || n === "" || isNaN(Number(n))) return "&mdash;";
+    return Number(n).toLocaleString("en-IN", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+  }
+
+  function escapeHtml(s){
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+      return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c];
+    });
+  }
+
+  function timeAgo(iso){
+    if (!iso) return "unknown";
+    var diffMs = Date.now() - new Date(iso).getTime();
+    var mins = Math.round(diffMs / 60000);
+    if (mins < 1) return "just now";
+    if (mins < 60) return mins + "m ago";
+    var hrs = Math.round(mins / 60);
+    if (hrs < 48) return hrs + "h ago";
+    return Math.round(hrs / 24) + "d ago";
+  }
+
+  function pct(n, total){
+    if (!total) return "0%";
+    return Math.round((n / total) * 100) + "%";
+  }
+
+  function breadthColor(fraction){
+    // 0 -> sell red, 0.5 -> hold amber, 1 -> buy green
+    if (fraction >= 0.66) return "var(--buy)";
+    if (fraction >= 0.4) return "var(--hold)";
+    return "var(--sell)";
+  }
+
+  // ---- Render: header / status -------------------------------------------
+  function renderStatus(scanner){
+    var updatedAt = scanner.updatedAt;
+    var rel = document.getElementById("updatedRel");
+    var abs = document.getElementById("updatedAbs");
+    var box = document.getElementById("statusBox");
+    rel.textContent = updatedAt ? timeAgo(updatedAt) : "no timestamp";
+    abs.textContent = updatedAt ? new Date(updatedAt).toLocaleString("en-IN") : "";
+    var staleHours = updatedAt ? (Date.now() - new Date(updatedAt).getTime()) / 36e5 : 999;
+    box.className = "status" + (staleHours > 30 ? " stale" : "");
+    document.getElementById("repoLink").href = REPO_URL + "/blob/main/data/scanner.json";
+  }
+
+  // ---- Render: breadth ladder ---------------------------------------------
+  function renderBreadth(scanner){
+    var total = (scanner.stats && (scanner.stats.buy + scanner.stats.sell + scanner.stats.hold)) ||
+                (scanner.stocks ? scanner.stocks.length : 0);
+    document.getElementById("breadthTotal").textContent = total + " stocks scanned";
+
+    var order = ["ema10","ema20","ema50","ema100","ema200"];
+    var breadth = scanner.marketBreadth || {};
+    var html = "";
+    order.forEach(function(k){
+      var count = breadth[k] || 0;
+      var frac = total ? count / total : 0;
+      var color = breadthColor(frac);
+      html += '<div class="rung">' +
+                '<div class="rung-label">' + k.replace("ema","EMA ") + '</div>' +
+                '<div class="rung-track"><div class="rung-fill" style="width:' + (frac*100).toFixed(1) + '%;background:' + color + ';"></div></div>' +
+                '<div class="rung-pct" style="color:' + color + '">' + Math.round(frac*100) + '%<span class="count">' + count + '/' + total + '</span></div>' +
+              '</div>';
+    });
+    document.getElementById("rungs").innerHTML = html;
+  }
+
+  // ---- Render: stat cards ---------------------------------------------------
+  function renderStats(scanner){
+    var s = scanner.stats || { buy: 0, sell: 0, hold: 0 };
+    var total = s.buy + s.sell + s.hold;
+    document.getElementById("statBuy").textContent = s.buy;
+    document.getElementById("statSell").textContent = s.sell;
+    document.getElementById("statHold").textContent = s.hold;
+    document.getElementById("statBuyPct").textContent = pct(s.buy, total) + " of scanned";
+    document.getElementById("statSellPct").textContent = pct(s.sell, total) + " of scanned";
+    document.getElementById("statHoldPct").textContent = pct(s.hold, total) + " of scanned";
+  }
+
+  // ---- Render: new buy/sell chip strips --------------------------------------
+  function renderSignals(scanner){
+    function chips(list, containerId, cls){
+      var el = document.getElementById(containerId);
+      if (!list || list.length === 0){
+        el.innerHTML = '<span class="empty-note">none today</span>';
+        return;
+      }
+      el.innerHTML = list.map(function(s){
+        return '<span class="chip"><b>' + escapeHtml(s.SYMBOLL || "") + '</b> &middot; ' + fmtNum(s.PRICE) + '</span>';
+      }).join("");
+    }
+    chips(scanner.newBuy, "newBuyChips");
+    chips(scanner.newSell, "newSellChips");
+  }
+
+  // ---- Render: tabs -----------------------------------------------------
+  function renderTabs(scanner){
+    var counts = {
+      all: (scanner.stocks || []).length,
+      largeCap: (scanner.largeCap || []).length,
+      midCap: (scanner.midCap || []).length,
+      smallCap: (scanner.smallCap || []).length
+    };
+    var el = document.getElementById("tabs");
+    el.innerHTML = TABS.map(function(t){
+      return '<div class="tab' + (state.tab === t.key ? ' active' : '') + '" data-tab="' + t.key + '">' +
+             t.label + '<span class="n">' + counts[t.key] + '</span></div>';
+    }).join("");
+    Array.prototype.forEach.call(el.querySelectorAll(".tab"), function(node){
+      node.addEventListener("click", function(){
+        state.tab = node.getAttribute("data-tab");
+        renderTabs(state.data);
+        renderTable();
+      });
+    });
+  }
+
+  // ---- Render: table head -------------------------------------------------
+  function renderTheadOnce(){
+    var row = document.getElementById("theadRow");
+    row.innerHTML = COLUMNS.map(function(c){
+      return '<th data-key="' + c.key + '">' + c.label + '<span class="arrow"></span></th>';
+    }).join("");
+    Array.prototype.forEach.call(row.querySelectorAll("th"), function(th){
+      th.addEventListener("click", function(){
+        var key = th.getAttribute("data-key");
+        if (state.sortKey === key){
+          state.sortDir *= -1;
+        } else {
+          state.sortKey = key;
+          state.sortDir = 1;
+        }
+        renderTable();
+      });
+    });
+  }
+
+  function updateSortIndicators(){
+    Array.prototype.forEach.call(document.querySelectorAll("#theadRow th"), function(th){
+      var key = th.getAttribute("data-key");
+      th.classList.toggle("sorted", key === state.sortKey);
+      th.querySelector(".arrow").textContent = key === state.sortKey ? (state.sortDir === 1 ? "\u2191" : "\u2193") : "";
+    });
+  }
+
+  // ---- Render: table body ---------------------------------------------
+  function currentRows(){
+    var scanner = state.data;
+    var pool = state.tab === "all" ? (scanner.stocks || []) : (scanner[state.tab] || []);
+    var q = state.query.trim().toLowerCase();
+    if (q){
+      pool = pool.filter(function(s){
+        return (s.SYMBOLL || "").toLowerCase().indexOf(q) !== -1 ||
+               (s.COMPANY || "").toLowerCase().indexOf(q) !== -1;
+      });
+    }
+    var key = state.sortKey, dir = state.sortDir;
+    var col = COLUMNS.filter(function(c){ return c.key === key; })[0];
+    pool = pool.slice().sort(function(a, b){
+      var av = a[key], bv = b[key];
+      if (col && col.type === "num"){
+        av = Number(av); bv = Number(bv);
+        if (isNaN(av)) av = -Infinity;
+        if (isNaN(bv)) bv = -Infinity;
+        return (av - bv) * dir;
+      }
+      av = String(av || "").toLowerCase();
+      bv = String(bv || "").toLowerCase();
+      if (av < bv) return -1 * dir;
+      if (av > bv) return 1 * dir;
+      return 0;
+    });
+    return pool;
+  }
+
+  function renderTable(){
+    updateSortIndicators();
+    var rows = currentRows();
+    var body = document.getElementById("tbody");
+    if (rows.length === 0){
+      body.innerHTML = '<tr><td colspan="' + COLUMNS.length + '"><div class="no-rows">no stocks match this filter</div></td></tr>';
+      return;
+    }
+    body.innerHTML = rows.map(function(s){
+      return "<tr>" + COLUMNS.map(function(c){
+        if (c.key === "SYMBOLL"){
+          return '<td><span class="sym">' + escapeHtml((s.SYMBOLL || "").replace(/\.NS$/,"")) + '</span></td>';
+        }
+        if (c.key === "COMPANY"){
+          return '<td><span class="company">' + escapeHtml(s.COMPANY || "") + '</span></td>';
+        }
+        if (c.type === "badge"){
+          var sig = s.Signal || "HOLD";
+          return '<td><span class="badge ' + sig + '">' + sig + '</span></td>';
+        }
+        return '<td>' + fmtNum(s[c.key]) + '</td>';
+      }).join("") + "</tr>";
+    }).join("");
+  }
+
+  // ---- Errors footer note ------------------------------------------------
+  function renderErrors(scanner){
+    var errs = scanner.errors || [];
+    var toggle = document.getElementById("errToggle");
+    var box = document.getElementById("errBox");
+    if (errs.length === 0){
+      toggle.style.display = "none";
+      box.style.display = "none";
+      return;
+    }
+    toggle.style.display = "inline";
+    toggle.textContent = errs.length + " symbol(s) failed to fetch \u2013 show details";
+    toggle.addEventListener("click", function(){
+      box.style.display = box.style.display === "block" ? "none" : "block";
+    });
+    box.innerHTML = errs.map(function(e){
+      return escapeHtml(e.symbol || "?") + " &mdash; " + escapeHtml(e.reason || "unknown error");
+    }).join("<br>");
+  }
+
+  // ---- Boot ---------------------------------------------------------------
+  function boot(scanner){
+    state.data = scanner;
+    renderStatus(scanner);
+    renderBreadth(scanner);
+    renderStats(scanner);
+    renderSignals(scanner);
+    renderTabs(scanner);
+    renderTheadOnce();
+    renderTable();
+    renderErrors(scanner);
+
+    document.getElementById("search").addEventListener("input", function(e){
+      state.query = e.target.value;
+      renderTable();
+    });
+
+    document.getElementById("loadState").style.display = "none";
+    document.getElementById("app").style.display = "block";
+  }
+
+  function showError(msg){
+    var el = document.getElementById("errorState");
+    document.getElementById("loadState").style.display = "none";
+    el.style.display = "block";
+    el.textContent = msg;
+  }
+
+  fetch(DATA_URL + "?t=" + Date.now())
+    .then(function(res){
+      if (!res.ok) throw new Error("HTTP " + res.status + " fetching " + DATA_URL);
+      return res.json();
+    })
+    .then(boot)
+    .catch(function(err){
+      showError("Could not load scanner.json \u2014 " + err.message + ". Check that data/scanner.json exists in this repo and GitHub Pages is enabled.");
+    });
+})();
+</script>
+</body>
+</html>
