@@ -3,5 +3,404 @@
     "date": "2026-08-01",
     "buy": [],
     "sell": []
+  },
+  {
+    "date": "2026-08-03",
+    "buy": [
+      {
+        "symbol": "3MINDIA.NS",
+        "price": 35600,
+        "currentPrice": 35600,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "ABB.NS",
+        "price": 7403.5,
+        "currentPrice": 7403.5,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "ACMESOLAR.NS",
+        "price": 371.1499938964844,
+        "currentPrice": 371.1499938964844,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "ABCAPITAL.NS",
+        "price": 427.1499938964844,
+        "currentPrice": 427.1499938964844,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "AEGISLOG.NS",
+        "price": 1326,
+        "currentPrice": 1326,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "AEGISVOPAK.NS",
+        "price": 298.70001220703125,
+        "currentPrice": 298.70001220703125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "AFFLE.NS",
+        "price": 1622,
+        "currentPrice": 1622,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "ANANDRATHI.NS",
+        "price": 2077,
+        "currentPrice": 2077,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "BAJAJHLDNG.NS",
+        "price": 11440,
+        "currentPrice": 11440,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "BALRAMCHIN.NS",
+        "price": 614.5,
+        "currentPrice": 614.5,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "BHEL.NS",
+        "price": 413.45001220703125,
+        "currentPrice": 413.45001220703125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "BLUEDART.NS",
+        "price": 5530.5,
+        "currentPrice": 5530.5,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "CARBORUNIV.NS",
+        "price": 1080.9000244140625,
+        "currentPrice": 1080.9000244140625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "CHOICEIN.NS",
+        "price": 830.7000122070312,
+        "currentPrice": 830.7000122070312,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "DEEPAKNTR.NS",
+        "price": 1687.800048828125,
+        "currentPrice": 1687.800048828125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "FIVESTAR.NS",
+        "price": 553.75,
+        "currentPrice": 553.75,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "FORTIS.NS",
+        "price": 960.9000244140625,
+        "currentPrice": 960.9000244140625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "GLENMARK.NS",
+        "price": 2230,
+        "currentPrice": 2230,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "GODREJIND.NS",
+        "price": 1327,
+        "currentPrice": 1327,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "GRASIM.NS",
+        "price": 3132.5,
+        "currentPrice": 3132.5,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "FLUOROCHEM.NS",
+        "price": 4473.89990234375,
+        "currentPrice": 4473.89990234375,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "HOMEFIRST.NS",
+        "price": 1201.300048828125,
+        "currentPrice": 1201.300048828125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "HONASA.NS",
+        "price": 453.95001220703125,
+        "currentPrice": 453.95001220703125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "INDGN.NS",
+        "price": 544.4000244140625,
+        "currentPrice": 544.4000244140625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "INDIANB.NS",
+        "price": 850.0999755859375,
+        "currentPrice": 850.0999755859375,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "INDUSINDBK.NS",
+        "price": 1019.4000244140625,
+        "currentPrice": 1019.4000244140625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "INDIGO.NS",
+        "price": 5358,
+        "currentPrice": 5358,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "IGIL.NS",
+        "price": 364.6000061035156,
+        "currentPrice": 364.6000061035156,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "IKS.NS",
+        "price": 1846,
+        "currentPrice": 1846,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "JSWENERGY.NS",
+        "price": 564.7999877929688,
+        "currentPrice": 564.7999877929688,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "JUBLINGREA.NS",
+        "price": 756.7999877929688,
+        "currentPrice": 756.7999877929688,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "JYOTICNC.NS",
+        "price": 832.75,
+        "currentPrice": 832.75,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "LTF.NS",
+        "price": 320.20001220703125,
+        "currentPrice": 320.20001220703125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "LT.NS",
+        "price": 3971.10009765625,
+        "currentPrice": 3971.10009765625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "LICI.NS",
+        "price": 428,
+        "currentPrice": 428,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "MAXHEALTH.NS",
+        "price": 1107.300048828125,
+        "currentPrice": 1107.300048828125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "NHPC.NS",
+        "price": 80.23999786376953,
+        "currentPrice": 80.23999786376953,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "NAVINFLUOR.NS",
+        "price": 7664,
+        "currentPrice": 7664,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "NAM-INDIA.NS",
+        "price": 1171.9000244140625,
+        "currentPrice": 1171.9000244140625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "NIVABUPA.NS",
+        "price": 87.55999755859375,
+        "currentPrice": 87.55999755859375,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "OFSS.NS",
+        "price": 11362,
+        "currentPrice": 11362,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "PCBL.NS",
+        "price": 326.95001220703125,
+        "currentPrice": 326.95001220703125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "PNBHOUSING.NS",
+        "price": 1092.5,
+        "currentPrice": 1092.5,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "PTCIL.NS",
+        "price": 17860,
+        "currentPrice": 17860,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "PFIZER.NS",
+        "price": 4857.7998046875,
+        "currentPrice": 4857.7998046875,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "POLYMED.NS",
+        "price": 1737.4000244140625,
+        "currentPrice": 1737.4000244140625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "POONAWALLA.NS",
+        "price": 470,
+        "currentPrice": 470,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "SBILIFE.NS",
+        "price": 1897,
+        "currentPrice": 1897,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "SCHNEIDER.NS",
+        "price": 1351.300048828125,
+        "currentPrice": 1351.300048828125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "SHREECEM.NS",
+        "price": 26850,
+        "currentPrice": 26850,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "SOLARINDS.NS",
+        "price": 18469,
+        "currentPrice": 18469,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "SUNDARMFIN.NS",
+        "price": 4735.2998046875,
+        "currentPrice": 4735.2998046875,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "TITAGARH.NS",
+        "price": 858,
+        "currentPrice": 858,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "TRAVELFOOD.NS",
+        "price": 1338,
+        "currentPrice": 1338,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "ULTRACEMCO.NS",
+        "price": 11961,
+        "currentPrice": 11961,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "URBANCO.NS",
+        "price": 147.49000549316406,
+        "currentPrice": 147.49000549316406,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "USHAMART.NS",
+        "price": 508,
+        "currentPrice": 508,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "ZFCVINDIA.NS",
+        "price": 2443.800048828125,
+        "currentPrice": 2443.800048828125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "ZYDUSLIFE.NS",
+        "price": 1122.800048828125,
+        "currentPrice": 1122.800048828125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "ZYDUSWELL.NS",
+        "price": 576.9500122070312,
+        "currentPrice": 576.9500122070312,
+        "pnlPercent": 0
+      }
+    ],
+    "sell": [
+      {
+        "symbol": "BRITANNIA.NS",
+        "price": 5455
+      },
+      {
+        "symbol": "EIHOTEL.NS",
+        "price": 331
+      },
+      {
+        "symbol": "GAIL.NS",
+        "price": 173.2899932861328
+      },
+      {
+        "symbol": "JBMA.NS",
+        "price": 668.2000122070312
+      },
+      {
+        "symbol": "NH.NS",
+        "price": 1929
+      },
+      {
+        "symbol": "ONESOURCE.NS",
+        "price": 1598.5
+      },
+      {
+        "symbol": "PAGEIND.NS",
+        "price": 40365
+      },
+      {
+        "symbol": "ZEEL.NS",
+        "price": 103.5
+      }
+    ]
   }
 ]
