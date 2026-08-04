@@ -10,116 +10,112 @@
       {
         "symbol": "AIAENG.NS",
         "price": 4684.60009765625,
-        "currentPrice": 4684.60009765625,
-        "pnlPercent": 0
+        "currentPrice": 4704.60009765625,
+        "pnlPercent": 0.43
       },
       {
         "symbol": "APLAPOLLO.NS",
         "price": 1941.5,
-        "currentPrice": 1941.5,
-        "pnlPercent": 0
+        "currentPrice": 1946.5999755859375,
+        "pnlPercent": 0.26
       },
       {
         "symbol": "BPCL.NS",
         "price": 329.95001220703125,
-        "currentPrice": 329.95001220703125,
-        "pnlPercent": 0
+        "currentPrice": 325.3500061035156,
+        "pnlPercent": -1.39
       },
       {
         "symbol": "BHARTIHEXA.NS",
         "price": 1645.800048828125,
-        "currentPrice": 1645.800048828125,
-        "pnlPercent": 0
+        "currentPrice": 1635.199951171875,
+        "pnlPercent": -0.64
       },
       {
         "symbol": "CAPLIPOINT.NS",
         "price": 2566.10009765625,
-        "currentPrice": 2566.10009765625,
-        "pnlPercent": 0
+        "currentPrice": 2575,
+        "pnlPercent": 0.35
       },
       {
         "symbol": "COROMANDEL.NS",
         "price": 2115.300048828125,
-        "currentPrice": 2115.300048828125,
-        "pnlPercent": 0
+        "currentPrice": 2109.89990234375,
+        "pnlPercent": -0.26
       },
       {
         "symbol": "CREDITACC.NS",
         "price": 1558.199951171875,
-        "currentPrice": 1558.199951171875,
-        "pnlPercent": 0
+        "currentPrice": 1560.5999755859375,
+        "pnlPercent": 0.15
       },
       {
         "symbol": "CUMMINSIND.NS",
         "price": 5550,
-        "currentPrice": 5550,
-        "pnlPercent": 0
+        "currentPrice": 5584,
+        "pnlPercent": 0.61
       },
       {
         "symbol": "DATAPATTNS.NS",
         "price": 4428.7998046875,
-        "currentPrice": 4428.7998046875,
-        "pnlPercent": 0
+        "currentPrice": 4596.39990234375,
+        "pnlPercent": 3.78
       },
       {
         "symbol": "ELGIEQUIP.NS",
         "price": 582.5999755859375,
-        "currentPrice": 582.5999755859375,
-        "pnlPercent": 0
+        "currentPrice": 585.1500244140625,
+        "pnlPercent": 0.44
       },
       {
         "symbol": "HCLTECH.NS",
         "price": 1377,
-        "currentPrice": 1377,
-        "pnlPercent": 0
+        "currentPrice": 1364.199951171875,
+        "pnlPercent": -0.93
       },
       {
         "symbol": "HINDALCO.NS",
         "price": 994.9000244140625,
-        "currentPrice": 994.9000244140625,
-        "pnlPercent": 0
+        "currentPrice": 1010.5499877929688,
+        "pnlPercent": 1.57
       },
       {
         "symbol": "JSWINFRA.NS",
         "price": 329,
-        "currentPrice": 329,
-        "pnlPercent": 0
+        "currentPrice": 333.70001220703125,
+        "pnlPercent": 1.43
       },
       {
         "symbol": "JINDALSAW.NS",
         "price": 259.29998779296875,
-        "currentPrice": 259.29998779296875,
-        "pnlPercent": 0
+        "currentPrice": 262,
+        "pnlPercent": 1.04
       },
       {
         "symbol": "KAJARIACER.NS",
         "price": 1214.699951171875,
-        "currentPrice": 1214.699951171875,
-        "pnlPercent": 0
+        "currentPrice": 1215.800048828125,
+        "pnlPercent": 0.09
       },
       {
         "symbol": "LGEINDIA.NS",
         "price": 1569.800048828125,
-        "currentPrice": 1569.800048828125,
-        "pnlPercent": 0
+        "currentPrice": 1572.0999755859375,
+        "pnlPercent": 0.15
       },
       {
         "symbol": "NATIONALUM.NS",
         "price": 369,
-        "currentPrice": 369,
-        "pnlPercent": 0
+        "currentPrice": 377.29998779296875,
+        "pnlPercent": 2.25
       },
       {
         "symbol": "OBEROIRLTY.NS",
-        "price": 1861.0999755859375,
-        "currentPrice": 1861.0999755859375,
-        "pnlPercent": 0
+        "price": 1861.0999755859375
       },
       {
         "symbol": "PRESTIGE.NS",
-        "price": 1670,
-        "currentPrice": 1670,
-        "pnlPercent": 0
+        "price": 1670
       }
     ],
     "sell": [
@@ -186,6 +182,223 @@
       {
         "symbol": "ZYDUSWELL.NS",
         "price": 559.8499755859375
+      }
+    ]
+  },
+  {
+    "date": "2026-08-04",
+    "buy": [
+      {
+        "symbol": "ADANIENT.NS",
+        "price": 3073.10009765625,
+        "currentPrice": 3073.10009765625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "CPPLUS.NS",
+        "price": 3519.199951171875,
+        "currentPrice": 3519.199951171875,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "ASAHIINDIA.NS",
+        "price": 902.2000122070312,
+        "currentPrice": 902.2000122070312,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "BOSCHLTD.NS",
+        "price": 41460,
+        "currentPrice": 41460,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "CEATLTD.NS",
+        "price": 3569.39990234375,
+        "currentPrice": 3569.39990234375,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "DEEPAKFERT.NS",
+        "price": 1676.699951171875,
+        "currentPrice": 1676.699951171875,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "DIXON.NS",
+        "price": 14020,
+        "currentPrice": 14020,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "GAIL.NS",
+        "price": 176.5500030517578,
+        "currentPrice": 176.5500030517578,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "GESHIP.NS",
+        "price": 1454.4000244140625,
+        "currentPrice": 1454.4000244140625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "HFCL.NS",
+        "price": 205.3800048828125,
+        "currentPrice": 205.3800048828125,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "HINDZINC.NS",
+        "price": 562.8499755859375,
+        "currentPrice": 562.8499755859375,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "KEI.NS",
+        "price": 5361.2998046875,
+        "currentPrice": 5361.2998046875,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "KIRLOSENG.NS",
+        "price": 2257.89990234375,
+        "currentPrice": 2257.89990234375,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "LINDEINDIA.NS",
+        "price": 7233.5,
+        "currentPrice": 7233.5,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "NHPC.NS",
+        "price": 80.44000244140625,
+        "currentPrice": 80.44000244140625,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "NSLNISP.NS",
+        "price": 43.66999816894531,
+        "currentPrice": 43.66999816894531,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "NAVINFLUOR.NS",
+        "price": 7715.5,
+        "currentPrice": 7715.5,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "POLYCAB.NS",
+        "price": 9190.5,
+        "currentPrice": 9190.5,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "PREMIERENE.NS",
+        "price": 1047,
+        "currentPrice": 1047,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "SAGILITY.NS",
+        "price": 44.279998779296875,
+        "currentPrice": 44.279998779296875,
+        "pnlPercent": 0
+      },
+      {
+        "symbol": "TRITURBINE.NS",
+        "price": 634,
+        "currentPrice": 634,
+        "pnlPercent": 0
+      }
+    ],
+    "sell": [
+      {
+        "symbol": "AADHARHFC.NS",
+        "price": 498.3999938964844
+      },
+      {
+        "symbol": "AAVAS.NS",
+        "price": 1422.0999755859375
+      },
+      {
+        "symbol": "ABBOTINDIA.NS",
+        "price": 27785
+      },
+      {
+        "symbol": "ABFRL.NS",
+        "price": 61.849998474121094
+      },
+      {
+        "symbol": "DLF.NS",
+        "price": 655
+      },
+      {
+        "symbol": "DALBHARAT.NS",
+        "price": 1818.800048828125
+      },
+      {
+        "symbol": "GLENMARK.NS",
+        "price": 2213.39990234375
+      },
+      {
+        "symbol": "GODREJPROP.NS",
+        "price": 2057.699951171875
+      },
+      {
+        "symbol": "HINDPETRO.NS",
+        "price": 394.45001220703125
+      },
+      {
+        "symbol": "IDBI.NS",
+        "price": 84.5999984741211
+      },
+      {
+        "symbol": "INFY.NS",
+        "price": 1160.300048828125
+      },
+      {
+        "symbol": "JKTYRE.NS",
+        "price": 406.25
+      },
+      {
+        "symbol": "JSL.NS",
+        "price": 727.9000244140625
+      },
+      {
+        "symbol": "LICI.NS",
+        "price": 400.25
+      },
+      {
+        "symbol": "MAXHEALTH.NS",
+        "price": 1094.5
+      },
+      {
+        "symbol": "OBEROIRLTY.NS",
+        "price": 1818.0999755859375
+      },
+      {
+        "symbol": "PNBHOUSING.NS",
+        "price": 1066
+      },
+      {
+        "symbol": "PFC.NS",
+        "price": 420.04998779296875
+      },
+      {
+        "symbol": "PRESTIGE.NS",
+        "price": 1638.4000244140625
+      },
+      {
+        "symbol": "SUMICHEM.NS",
+        "price": 510.5
+      },
+      {
+        "symbol": "RAMCOCEM.NS",
+        "price": 940.1500244140625
       }
     ]
   }
