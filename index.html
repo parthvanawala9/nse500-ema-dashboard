@@ -290,6 +290,7 @@
               <th>Signal</th>
               <th>Price</th>
               <th>Current Price</th>
+              <th>As Of</th>
               <th>P&amp;L%</th>
             </tr>
           </thead>
@@ -667,7 +668,8 @@
           signal: "BUY",
           price: e.price,
           currentPrice: e.currentPrice,
-          pnlPercent: e.pnlPercent
+          pnlPercent: e.pnlPercent,
+          asOfDate: e.asOfDate
         });
       });
       (day.sell || []).forEach(function(e){
@@ -692,12 +694,13 @@
     }
     var body = document.getElementById("historyTbody");
     if (!rows.length){
-      body.innerHTML = '<tr><td colspan="6"><div class="no-rows">no history to show yet</div></td></tr>';
+      body.innerHTML = '<tr><td colspan="7"><div class="no-rows">no history to show yet</div></td></tr>';
       return;
     }
     body.innerHTML = rows.map(function(r){
       var isOpenBuy = r.signal === "BUY" && r.currentPrice !== undefined && r.currentPrice !== null;
       var curCell = isOpenBuy ? fmtNum(r.currentPrice) : "&mdash;";
+      var asOfCell = isOpenBuy && r.asOfDate ? escapeHtml(r.asOfDate) : "&mdash;";
       var pnlCell = isOpenBuy ? fmtPnl(r.pnlPercent) : "&mdash;";
       var pnlCls = isOpenBuy ? pnlClass(r.pnlPercent) : "pnl-flat";
       return "<tr>" +
@@ -706,6 +709,7 @@
         '<td><span class="badge ' + r.signal + '">' + r.signal + '</span></td>' +
         '<td>' + fmtNum(r.price) + '</td>' +
         '<td>' + curCell + '</td>' +
+        '<td>' + asOfCell + '</td>' +
         '<td class="' + pnlCls + '">' + pnlCell + '</td>' +
       "</tr>";
     }).join("");
