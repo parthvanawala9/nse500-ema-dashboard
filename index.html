@@ -673,7 +673,14 @@
         });
       });
       (day.sell || []).forEach(function(e){
-        rows.push({ date: day.date, symbol: e.symbol, signal: "SELL", price: e.price });
+        rows.push({
+          date: day.date,
+          symbol: e.symbol,
+          signal: "SELL",
+          price: e.price,
+          entryPrice: e.entryPrice,
+          pnlPercent: e.pnlPercent
+        });
       });
     });
     rows.sort(function(a, b){
@@ -699,10 +706,11 @@
     }
     body.innerHTML = rows.map(function(r){
       var isOpenBuy = r.signal === "BUY" && r.currentPrice !== undefined && r.currentPrice !== null;
+      var isClosedSell = r.signal === "SELL" && r.pnlPercent !== undefined && r.pnlPercent !== null;
       var curCell = isOpenBuy ? fmtNum(r.currentPrice) : "&mdash;";
       var asOfCell = isOpenBuy && r.asOfDate ? escapeHtml(r.asOfDate) : "&mdash;";
-      var pnlCell = isOpenBuy ? fmtPnl(r.pnlPercent) : "&mdash;";
-      var pnlCls = isOpenBuy ? pnlClass(r.pnlPercent) : "pnl-flat";
+      var pnlCell = (isOpenBuy || isClosedSell) ? fmtPnl(r.pnlPercent) : "&mdash;";
+      var pnlCls = (isOpenBuy || isClosedSell) ? pnlClass(r.pnlPercent) : "pnl-flat";
       return "<tr>" +
         '<td style="text-align:left;">' + escapeHtml(r.date) + '</td>' +
         '<td style="text-align:left;" class="sym">' + escapeHtml((r.symbol || "").replace(/\.NS$/,"")) + '</td>' +
