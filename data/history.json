@@ -265,7 +265,10 @@
       },
       {
         "symbol": "NSLNISP.NS",
-        "price": 44.0099983215332
+        "price": 44.0099983215332,
+        "currentPrice": 44.77000045776367,
+        "pnlPercent": 1.73,
+        "asOfDate": "2026-08-05"
       },
       {
         "symbol": "PNBHOUSING.NS",
@@ -414,113 +417,56 @@
   },
   {
     "date": "2026-08-05",
-    "buy": [
+    "buy": [],
+    "sell": [
       {
-        "symbol": "BLS.NS",
-        "price": 255.6300048828125,
-        "currentPrice": 255.6300048828125,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "FIRSTCRY.NS",
+        "price": 215.30999755859375
       },
       {
-        "symbol": "BIKAJI.NS",
-        "price": 650.2999877929688,
-        "currentPrice": 650.2999877929688,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "COCHINSHIP.NS",
+        "price": 1425
       },
       {
-        "symbol": "CANBK.NS",
-        "price": 128.91000366210938,
-        "currentPrice": 128.91000366210938,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "DCMSHRIRAM.NS",
+        "price": 1010
       },
       {
-        "symbol": "CGCL.NS",
-        "price": 238.3000030517578,
-        "currentPrice": 238.3000030517578,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "GILLETTE.NS",
+        "price": 7688
       },
       {
-        "symbol": "CHOLAHLDNG.NS",
-        "price": 1603.699951171875,
-        "currentPrice": 1603.699951171875,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "ICICIGI.NS",
+        "price": 1684
       },
       {
-        "symbol": "CROMPTON.NS",
-        "price": 266.1000061035156,
-        "currentPrice": 266.1000061035156,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "IRCON.NS",
+        "price": 131.36000061035156
       },
       {
-        "symbol": "ENGINERSIN.NS",
-        "price": 240.27000427246094,
-        "currentPrice": 240.27000427246094,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "JWL.NS",
+        "price": 258.8500061035156
       },
       {
-        "symbol": "HINDCOPPER.NS",
-        "price": 533.7999877929688,
-        "currentPrice": 533.7999877929688,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "MAZDOCK.NS",
+        "price": 2380.5
       },
       {
-        "symbol": "HINDPETRO.NS",
-        "price": 394.95001220703125,
-        "currentPrice": 394.95001220703125,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "RVNL.NS",
+        "price": 229
       },
       {
-        "symbol": "ITCHOTELS.NS",
-        "price": 168.92999267578125,
-        "currentPrice": 168.92999267578125,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "RELIANCE.NS",
+        "price": 1280
       },
       {
-        "symbol": "JMFINANCIL.NS",
-        "price": 126.12000274658203,
-        "currentPrice": 126.12000274658203,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "SUNTV.NS",
+        "price": 493.3500061035156
       },
       {
-        "symbol": "NMDC.NS",
-        "price": 85.80000305175781,
-        "currentPrice": 85.80000305175781,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "NSLNISP.NS",
-        "price": 44.77000045776367,
-        "currentPrice": 44.77000045776367,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "NIACL.NS",
-        "price": 183.75999450683594,
-        "currentPrice": 183.75999450683594,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "UCOBANK.NS",
-        "price": 26.489999771118164,
-        "currentPrice": 26.489999771118164,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
+        "symbol": "SWANCORP.NS",
+        "price": 310.6000061035156
       }
-    ],
-    "sell": []
+    ]
   }
 ]
