@@ -53,10 +53,7 @@
       },
       {
         "symbol": "DATAPATTNS.NS",
-        "price": 4428.7998046875,
-        "currentPrice": 4446.60009765625,
-        "pnlPercent": 0.4,
-        "asOfDate": "2026-08-05"
+        "price": 4428.7998046875
       },
       {
         "symbol": "ELGIEQUIP.NS",
@@ -223,10 +220,7 @@
       },
       {
         "symbol": "DELHIVERY.NS",
-        "price": 482,
-        "currentPrice": 470.25,
-        "pnlPercent": -2.44,
-        "asOfDate": "2026-08-05"
+        "price": 482
       },
       {
         "symbol": "DIXON.NS",
@@ -420,52 +414,40 @@
     "buy": [],
     "sell": [
       {
-        "symbol": "FIRSTCRY.NS",
-        "price": 215.30999755859375
+        "symbol": "CDSL.NS",
+        "price": 1326.5
       },
       {
-        "symbol": "COCHINSHIP.NS",
-        "price": 1425
+        "symbol": "DATAPATTNS.NS",
+        "price": 4446.60009765625,
+        "entryPrice": 4428.7998046875,
+        "pnlPercent": 0.4
       },
       {
-        "symbol": "DCMSHRIRAM.NS",
-        "price": 1010
+        "symbol": "DELHIVERY.NS",
+        "price": 470.25,
+        "entryPrice": 482,
+        "pnlPercent": -2.44
       },
       {
-        "symbol": "GILLETTE.NS",
-        "price": 7688
+        "symbol": "GESHIP.NS",
+        "price": 1404.699951171875
       },
       {
-        "symbol": "ICICIGI.NS",
-        "price": 1684
+        "symbol": "INTELLECT.NS",
+        "price": 746.2000122070312
       },
       {
-        "symbol": "IRCON.NS",
-        "price": 131.36000061035156
+        "symbol": "LUPIN.NS",
+        "price": 2388
       },
       {
-        "symbol": "JWL.NS",
-        "price": 258.8500061035156
+        "symbol": "VOLTAS.NS",
+        "price": 1300.5
       },
       {
-        "symbol": "MAZDOCK.NS",
-        "price": 2380.5
-      },
-      {
-        "symbol": "RVNL.NS",
-        "price": 229
-      },
-      {
-        "symbol": "RELIANCE.NS",
-        "price": 1280
-      },
-      {
-        "symbol": "SUNTV.NS",
-        "price": 493.3500061035156
-      },
-      {
-        "symbol": "SWANCORP.NS",
-        "price": 310.6000061035156
+        "symbol": "ZYDUSWELL.NS",
+        "price": 530.4000244140625
       }
     ]
   }
