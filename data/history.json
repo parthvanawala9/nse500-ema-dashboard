@@ -53,7 +53,10 @@
       },
       {
         "symbol": "DATAPATTNS.NS",
-        "price": 4428.7998046875
+        "price": 4428.7998046875,
+        "currentPrice": 4446.60009765625,
+        "pnlPercent": 0.4,
+        "asOfDate": "2026-08-05"
       },
       {
         "symbol": "ELGIEQUIP.NS",
@@ -220,7 +223,10 @@
       },
       {
         "symbol": "DELHIVERY.NS",
-        "price": 482
+        "price": 482,
+        "currentPrice": 470.25,
+        "pnlPercent": -2.44,
+        "asOfDate": "2026-08-05"
       },
       {
         "symbol": "DIXON.NS",
@@ -411,75 +417,7 @@
   },
   {
     "date": "2026-08-05",
-    "buy": [
-      {
-        "symbol": "AADHARHFC.NS",
-        "price": 505.20001220703125,
-        "currentPrice": 505.20001220703125,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "CPPLUS.NS",
-        "price": 3554.699951171875,
-        "currentPrice": 3554.699951171875,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "IPCALAB.NS",
-        "price": 1765,
-        "currentPrice": 1765,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "KIMS.NS",
-        "price": 802.1500244140625,
-        "currentPrice": 802.1500244140625,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "OLECTRA.NS",
-        "price": 1399.4000244140625,
-        "currentPrice": 1399.4000244140625,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "PAGEIND.NS",
-        "price": 40355,
-        "currentPrice": 40355,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      }
-    ],
-    "sell": [
-      {
-        "symbol": "CDSL.NS",
-        "price": 1326.5
-      },
-      {
-        "symbol": "DATAPATTNS.NS",
-        "price": 4446.60009765625,
-        "entryPrice": 4428.7998046875,
-        "pnlPercent": 0.4
-      },
-      {
-        "symbol": "DELHIVERY.NS",
-        "price": 470.25,
-        "entryPrice": 482,
-        "pnlPercent": -2.44
-      },
-      {
-        "symbol": "INTELLECT.NS",
-        "price": 746.2000122070312
-      },
-      {
-        "symbol": "VOLTAS.NS",
-        "price": 1300.5
-      }
-    ]
+    "buy": [],
+    "sell": []
   }
 ]
