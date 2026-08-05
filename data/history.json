@@ -53,7 +53,10 @@
       },
       {
         "symbol": "DATAPATTNS.NS",
-        "price": 4428.7998046875
+        "price": 4428.7998046875,
+        "currentPrice": 4446.60009765625,
+        "pnlPercent": 0.4,
+        "asOfDate": "2026-08-05"
       },
       {
         "symbol": "ELGIEQUIP.NS",
@@ -220,7 +223,10 @@
       },
       {
         "symbol": "DELHIVERY.NS",
-        "price": 482
+        "price": 482,
+        "currentPrice": 470.25,
+        "pnlPercent": -2.44,
+        "asOfDate": "2026-08-05"
       },
       {
         "symbol": "DIXON.NS",
@@ -412,43 +418,6 @@
   {
     "date": "2026-08-05",
     "buy": [],
-    "sell": [
-      {
-        "symbol": "CDSL.NS",
-        "price": 1326.5
-      },
-      {
-        "symbol": "DATAPATTNS.NS",
-        "price": 4446.60009765625,
-        "entryPrice": 4428.7998046875,
-        "pnlPercent": 0.4
-      },
-      {
-        "symbol": "DELHIVERY.NS",
-        "price": 470.25,
-        "entryPrice": 482,
-        "pnlPercent": -2.44
-      },
-      {
-        "symbol": "GESHIP.NS",
-        "price": 1404.699951171875
-      },
-      {
-        "symbol": "INTELLECT.NS",
-        "price": 746.2000122070312
-      },
-      {
-        "symbol": "LUPIN.NS",
-        "price": 2388
-      },
-      {
-        "symbol": "VOLTAS.NS",
-        "price": 1300.5
-      },
-      {
-        "symbol": "ZYDUSWELL.NS",
-        "price": 530.4000244140625
-      }
-    ]
+    "sell": []
   }
 ]
