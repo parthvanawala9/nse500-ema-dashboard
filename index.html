@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>NSE500 EMA Scanner</title>
+<title>NSE500 SMA Scanner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -174,20 +174,45 @@
   }
   .tier-head.BUY{color:var(--buy);}
   .tier-head.SELL{color:var(--sell);}
+  .tier-head.HOLD{color:var(--hold);}
   .tier-head .n{color:var(--muted-2);font-weight:400;text-transform:none;letter-spacing:0;margin-left:6px;}
   .tier-empty{padding:14px 16px;color:var(--muted-2);font-family:var(--mono);font-size:12px;}
 
-  .ema-dot{
+  .sma-dot{
     display:inline-block;width:11px;height:11px;border-radius:50%;
     vertical-align:middle;
   }
-  .ema-dot.above{background:var(--buy);box-shadow:0 0 0 3px var(--buy-dim);}
-  .ema-dot.below{background:var(--sell);box-shadow:0 0 0 3px var(--sell-dim);}
-  .ema-dot.na{background:var(--muted-2);box-shadow:0 0 0 3px var(--surface-2);}
+  .sma-dot.above{background:var(--buy);box-shadow:0 0 0 3px var(--buy-dim);}
+  .sma-dot.below{background:var(--sell);box-shadow:0 0 0 3px var(--sell-dim);}
+  .sma-dot.na{background:var(--muted-2);box-shadow:0 0 0 3px var(--surface-2);}
 
   .pnl-pos{color:var(--buy);}
   .pnl-neg{color:var(--sell);}
   .pnl-flat{color:var(--muted-2);}
+
+  .sym-click{cursor:pointer;text-decoration:underline;text-decoration-color:transparent;transition:text-decoration-color .15s;}
+  .sym-click:hover{text-decoration-color:var(--muted-2);}
+
+  .chart-modal{
+    display:none;position:fixed;inset:0;background:rgba(5,7,10,.75);
+    z-index:1000;align-items:center;justify-content:center;padding:16px;
+  }
+  .chart-modal.open{display:flex;}
+  .chart-modal-inner{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    width:100%;max-width:1000px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;
+  }
+  .chart-modal-head{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 16px;border-bottom:1px solid var(--line);
+    font-family:var(--mono);font-size:13px;
+  }
+  .chart-modal-close{
+    cursor:pointer;color:var(--muted);font-size:20px;line-height:1;padding:2px 8px;
+    border-radius:4px;
+  }
+  .chart-modal-close:hover{color:var(--text);background:var(--surface-2);}
+  #tvChartContainer{flex:1;min-height:480px;}
 
   footer{
     margin-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
@@ -217,8 +242,8 @@
   <div id="app">
     <header class="fade-in">
       <div>
-        <p class="brand-eyebrow">NSE 500 &middot; daily close &middot; EMA 10/20/50/100/200</p>
-        <h1>EMA<span class="accent">.</span>SCANNER</h1>
+        <p class="brand-eyebrow">NSE 500 &middot; daily close &middot; SMA 44/100/200 strategy</p>
+        <h1>SMA<span class="accent">.</span>SCANNER</h1>
       </div>
       <div class="status" id="statusBox">
         <div><span class="dot"></span><span id="updatedRel">&mdash;</span></div>
@@ -227,7 +252,7 @@
     </header>
 
     <section class="breadth fade-in d1">
-      <p class="breadth-title"><span>Market breadth &mdash; % of scanned stocks above each EMA</span><span id="breadthTotal"></span></p>
+      <p class="breadth-title"><span>Market breadth &mdash; % of scanned stocks above each SMA</span><span id="breadthTotal"></span></p>
       <div id="rungs"></div>
     </section>
 
@@ -310,6 +335,16 @@
     <div id="errBox"></div>
   </div>
 
+  <div class="chart-modal" id="chartModal">
+    <div class="chart-modal-inner">
+      <div class="chart-modal-head">
+        <span id="chartModalTitle">&mdash;</span>
+        <span class="chart-modal-close" id="chartModalClose">&times;</span>
+      </div>
+      <div id="tvChartContainer"></div>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -324,11 +359,9 @@
     { key: "SYMBOLL",  label: "Ticker",  type: "text"  },
     { key: "COMPANY",  label: "Company", type: "text"  },
     { key: "PRICE",    label: "Price",   type: "num"   },
-    { key: "EMA10",    label: "EMA10",   type: "ema"   },
-    { key: "EMA20",    label: "EMA20",   type: "ema"   },
-    { key: "EMA50",    label: "EMA50",   type: "ema"   },
-    { key: "EMA100",   label: "EMA100",  type: "ema"   },
-    { key: "EMA200",   label: "EMA200",  type: "ema"   },
+    { key: "SMA44",    label: "SMA44",   type: "sma"   },
+    { key: "SMA100",   label: "SMA100",  type: "sma"   },
+    { key: "SMA200",   label: "SMA200",  type: "sma"   },
     { key: "Signal",   label: "Signal",  type: "badge" }
   ];
 
@@ -340,12 +373,9 @@
   ];
 
   var TIER_GROUPS = [
-    { key: "buyAbove5",    label: "Above all 5 EMAs", cls: "BUY"  },
-    { key: "buyAbove4",    label: "Above 4 EMAs",     cls: "BUY"  },
-    { key: "sellBelow2",   label: "Below 2 EMAs",     cls: "SELL" },
-    { key: "sellBelow3",   label: "Below 3 EMAs",     cls: "SELL" },
-    { key: "sellBelow4",   label: "Below 4 EMAs",     cls: "SELL" },
-    { key: "sellBelowAll", label: "Below all 5 EMAs", cls: "SELL" }
+    { key: "buy",  label: "Buy",  cls: "BUY"  },
+    { key: "hold", label: "Hold", cls: "HOLD" },
+    { key: "sell", label: "Sell", cls: "SELL" }
   ];
 
   function capGroupTotal(group){
@@ -430,7 +460,7 @@
                 (scanner.stocks ? scanner.stocks.length : 0);
     document.getElementById("breadthTotal").textContent = total + " stocks scanned";
 
-    var order = ["ema10","ema20","ema50","ema100","ema200"];
+    var order = ["sma44","sma100","sma200"];
     var breadth = scanner.marketBreadth || {};
     var html = "";
     order.forEach(function(k){
@@ -438,7 +468,7 @@
       var frac = total ? count / total : 0;
       var color = breadthColor(frac);
       html += '<div class="rung">' +
-                '<div class="rung-label">' + k.replace("ema","EMA ") + '</div>' +
+                '<div class="rung-label">' + k.replace("sma","SMA ") + '</div>' +
                 '<div class="rung-track"><div class="rung-fill" style="width:' + (frac*100).toFixed(1) + '%;background:' + color + ';"></div></div>' +
                 '<div class="rung-pct" style="color:' + color + '">' + Math.round(frac*100) + '%<span class="count">' + count + '/' + total + '</span></div>' +
               '</div>';
@@ -534,7 +564,7 @@
     var col = COLUMNS.filter(function(c){ return c.key === key; })[0];
     pool = pool.slice().sort(function(a, b){
       var av = a[key], bv = b[key];
-      if (col && (col.type === "num" || col.type === "ema")){
+      if (col && (col.type === "num" || col.type === "sma")){
         av = Number(av); bv = Number(bv);
         if (isNaN(av)) av = -Infinity;
         if (isNaN(bv)) bv = -Infinity;
@@ -573,7 +603,7 @@
     body.innerHTML = rows.map(function(s){
       return "<tr>" + COLUMNS.map(function(c){
         if (c.key === "SYMBOLL"){
-          return '<td><span class="sym">' + escapeHtml((s.SYMBOLL || "").replace(/\.NS$/,"")) + '</span></td>';
+          return '<td><span class="sym sym-click" data-symbol="' + escapeHtml(s.SYMBOLL || "") + '">' + escapeHtml((s.SYMBOLL || "").replace(/\.NS$/,"")) + '</span></td>';
         }
         if (c.key === "COMPANY"){
           return '<td><span class="company">' + escapeHtml(s.COMPANY || "") + '</span></td>';
@@ -582,14 +612,14 @@
           var sig = s.Signal || "HOLD";
           return '<td><span class="badge ' + sig + '">' + sig + '</span></td>';
         }
-        if (c.type === "ema"){
+        if (c.type === "sma"){
           var price = Number(s.PRICE);
           var emaVal = Number(s[c.key]);
           var cls = "na";
           if (!isNaN(price) && !isNaN(emaVal)){
             cls = price > emaVal ? "above" : (price < emaVal ? "below" : "na");
           }
-          return '<td><span class="ema-dot ' + cls + '" title="' + fmtNum(s[c.key]) + '"></span></td>';
+          return '<td><span class="sma-dot ' + cls + '" title="' + fmtNum(s[c.key]) + '"></span></td>';
         }
         return '<td>' + fmtNum(s[c.key]) + '</td>';
       }).join("") + "</tr>";
@@ -599,7 +629,7 @@
   function tierRowsHtml(list){
     return list.map(function(s){
       return "<tr>" +
-        '<td><span class="sym">' + escapeHtml((s.SYMBOLL || "").replace(/\.NS$/,"")) + '</span></td>' +
+        '<td><span class="sym sym-click" data-symbol="' + escapeHtml(s.SYMBOLL || "") + '">' + escapeHtml((s.SYMBOLL || "").replace(/\.NS$/,"")) + '</span></td>' +
         '<td><span class="company">' + escapeHtml(s.COMPANY || "") + '</span></td>' +
         '<td>' + fmtNum(s.PRICE) + '</td>' +
         '<td><span class="badge ' + (s.Signal || "") + '">' + (s.Signal || "") + '</span></td>' +
@@ -713,7 +743,7 @@
       var pnlCls = (isOpenBuy || isClosedSell) ? pnlClass(r.pnlPercent) : "pnl-flat";
       return "<tr>" +
         '<td style="text-align:left;">' + escapeHtml(r.date) + '</td>' +
-        '<td style="text-align:left;" class="sym">' + escapeHtml((r.symbol || "").replace(/\.NS$/,"")) + '</td>' +
+        '<td style="text-align:left;" class="sym sym-click" data-symbol="' + escapeHtml(r.symbol || "") + '">' + escapeHtml((r.symbol || "").replace(/\.NS$/,"")) + '</td>' +
         '<td><span class="badge ' + r.signal + '">' + r.signal + '</span></td>' +
         '<td>' + fmtNum(r.price) + '</td>' +
         '<td>' + curCell + '</td>' +
@@ -749,6 +779,78 @@
     el.style.display = "block";
     el.textContent = msg;
   }
+
+  // --------------------------------------------------------------------
+  // Ticker chart modal - opens a TradingView chart (candles + SMA
+  // 44/100/200 overlay) for whichever symbol was clicked. Uses
+  // TradingView's own hosted data, so no historical prices need to be
+  // fetched or stored by this dashboard.
+  // --------------------------------------------------------------------
+  function toTradingViewSymbol(symbol){
+    var base = (symbol || "").replace(/\.NS$/i, "").toUpperCase();
+    return "NSE:" + base;
+  }
+
+  function openChart(symbol){
+    var modal = document.getElementById("chartModal");
+    var title = document.getElementById("chartModalTitle");
+    var container = document.getElementById("tvChartContainer");
+    title.textContent = (symbol || "").replace(/\.NS$/i, "");
+    container.innerHTML =
+      '<div class="tradingview-widget-container" style="height:100%;width:100%;">' +
+        '<div class="tradingview-widget-container__widget" style="height:100%;width:100%;"></div>' +
+      '</div>';
+    modal.classList.add("open");
+
+    var wrapper = container.querySelector(".tradingview-widget-container");
+    var config = {
+      autosize: true,
+      symbol: toTradingViewSymbol(symbol),
+      interval: "D",
+      timezone: "Asia/Kolkata",
+      theme: "dark",
+      style: "1",
+      locale: "in",
+      toolbar_bg: "#12161c",
+      enable_publishing: false,
+      hide_top_toolbar: false,
+      hide_legend: false,
+      allow_symbol_change: false,
+      studies: [
+        { id: "MASimple@tv-basicstudies", inputs: { length: 44 } },
+        { id: "MASimple@tv-basicstudies", inputs: { length: 100 } },
+        { id: "MASimple@tv-basicstudies", inputs: { length: 200 } }
+      ],
+      support_host: "https://www.tradingview.com"
+    };
+
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    script.text = JSON.stringify(config);
+    wrapper.appendChild(script);
+  }
+
+  function closeChart(){
+    document.getElementById("chartModal").classList.remove("open");
+    document.getElementById("tvChartContainer").innerHTML = "";
+  }
+
+  document.addEventListener("click", function(e){
+    var symEl = e.target.closest(".sym-click");
+    if (symEl){
+      openChart(symEl.getAttribute("data-symbol"));
+      return;
+    }
+    if (e.target.id === "chartModalClose" || e.target.id === "chartModal"){
+      closeChart();
+    }
+  });
+
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape") closeChart();
+  });
 
   Promise.all([
     fetch(DATA_URL + "?t=" + Date.now()).then(function(res){
