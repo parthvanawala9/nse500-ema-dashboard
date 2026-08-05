@@ -53,7 +53,10 @@
       },
       {
         "symbol": "DATAPATTNS.NS",
-        "price": 4428.7998046875
+        "price": 4428.7998046875,
+        "currentPrice": 4554.7001953125,
+        "pnlPercent": 2.84,
+        "asOfDate": "2026-08-05"
       },
       {
         "symbol": "ELGIEQUIP.NS",
@@ -107,7 +110,10 @@
       },
       {
         "symbol": "OBEROIRLTY.NS",
-        "price": 1861.0999755859375
+        "price": 1861.0999755859375,
+        "currentPrice": 1778.800048828125,
+        "pnlPercent": -4.42,
+        "asOfDate": "2026-08-05"
       },
       {
         "symbol": "PRESTIGE.NS",
@@ -217,7 +223,10 @@
       },
       {
         "symbol": "DELHIVERY.NS",
-        "price": 482
+        "price": 482,
+        "currentPrice": 482,
+        "pnlPercent": 0,
+        "asOfDate": "2026-08-05"
       },
       {
         "symbol": "DIXON.NS",
@@ -408,201 +417,7 @@
   },
   {
     "date": "2026-08-05",
-    "buy": [
-      {
-        "symbol": "DATAPATTNS.NS",
-        "price": 4554.7001953125,
-        "currentPrice": 4554.7001953125,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "DELHIVERY.NS",
-        "price": 482,
-        "currentPrice": 482,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "HFCL.NS",
-        "price": 202.77999877929688,
-        "currentPrice": 202.77999877929688,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "LUPIN.NS",
-        "price": 2410,
-        "currentPrice": 2410,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "WELSPUNLIV.NS",
-        "price": 160.72999572753906,
-        "currentPrice": 160.72999572753906,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      },
-      {
-        "symbol": "ZYDUSLIFE.NS",
-        "price": 1130,
-        "currentPrice": 1130,
-        "pnlPercent": 0,
-        "asOfDate": "2026-08-05"
-      }
-    ],
-    "sell": [
-      {
-        "symbol": "AIAENG.NS",
-        "price": 4627
-      },
-      {
-        "symbol": "AADHARHFC.NS",
-        "price": 492.79998779296875
-      },
-      {
-        "symbol": "AAVAS.NS",
-        "price": 1392.5999755859375
-      },
-      {
-        "symbol": "ADANIENT.NS",
-        "price": 3050
-      },
-      {
-        "symbol": "BLS.NS",
-        "price": 247.9499969482422
-      },
-      {
-        "symbol": "BIKAJI.NS",
-        "price": 647.9000244140625
-      },
-      {
-        "symbol": "BBTC.NS",
-        "price": 1505.699951171875
-      },
-      {
-        "symbol": "CEMPRO.NS",
-        "price": 1329.800048828125
-      },
-      {
-        "symbol": "CHOLAHLDNG.NS",
-        "price": 1545.9000244140625
-      },
-      {
-        "symbol": "COCHINSHIP.NS",
-        "price": 1430
-      },
-      {
-        "symbol": "COLPAL.NS",
-        "price": 2010
-      },
-      {
-        "symbol": "CROMPTON.NS",
-        "price": 263.1000061035156
-      },
-      {
-        "symbol": "DOMS.NS",
-        "price": 2253.10009765625
-      },
-      {
-        "symbol": "EMAMILTD.NS",
-        "price": 391.79998779296875
-      },
-      {
-        "symbol": "HINDPETRO.NS",
-        "price": 391.5
-      },
-      {
-        "symbol": "IFCI.NS",
-        "price": 75.9000015258789
-      },
-      {
-        "symbol": "IPCALAB.NS",
-        "price": 1694.699951171875
-      },
-      {
-        "symbol": "JAINREC.NS",
-        "price": 323.45001220703125
-      },
-      {
-        "symbol": "JWL.NS",
-        "price": 259.8500061035156
-      },
-      {
-        "symbol": "KIMS.NS",
-        "price": 795.9000244140625
-      },
-      {
-        "symbol": "LGEINDIA.NS",
-        "price": 1542.5
-      },
-      {
-        "symbol": "LEMONTREE.NS",
-        "price": 113.29000091552734
-      },
-      {
-        "symbol": "LICI.NS",
-        "price": 391.29998779296875
-      },
-      {
-        "symbol": "MANKIND.NS",
-        "price": 2438
-      },
-      {
-        "symbol": "MAXHEALTH.NS",
-        "price": 1077
-      },
-      {
-        "symbol": "NATCOPHARM.NS",
-        "price": 917
-      },
-      {
-        "symbol": "OBEROIRLTY.NS",
-        "price": 1778.800048828125,
-        "entryPrice": 1861.0999755859375,
-        "pnlPercent": -4.42
-      },
-      {
-        "symbol": "PAGEIND.NS",
-        "price": 39750
-      },
-      {
-        "symbol": "PHOENIXLTD.NS",
-        "price": 1932.300048828125
-      },
-      {
-        "symbol": "PFC.NS",
-        "price": 420
-      },
-      {
-        "symbol": "POWERGRID.NS",
-        "price": 283.3999938964844
-      },
-      {
-        "symbol": "RVNL.NS",
-        "price": 231.39999389648438
-      },
-      {
-        "symbol": "RELIANCE.NS",
-        "price": 1290.9000244140625
-      },
-      {
-        "symbol": "SARDAEN.NS",
-        "price": 509.3999938964844
-      },
-      {
-        "symbol": "TATACONSUM.NS",
-        "price": 1092
-      },
-      {
-        "symbol": "NIACL.NS",
-        "price": 171.77000427246094
-      },
-      {
-        "symbol": "UPL.NS",
-        "price": 581.9000244140625
-      }
-    ]
+    "buy": [],
+    "sell": []
   }
 ]
