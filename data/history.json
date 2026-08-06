@@ -14,15 +14,15 @@
       {
         "symbol": "APLAPOLLO.NS",
         "price": 1941.5,
-        "currentPrice": 1962.800048828125,
-        "pnlPercent": 1.1,
+        "currentPrice": 1990,
+        "pnlPercent": 2.5,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "BPCL.NS",
         "price": 329.95001220703125,
-        "currentPrice": 324.25,
-        "pnlPercent": -1.73,
+        "currentPrice": 324.29998779296875,
+        "pnlPercent": -1.71,
         "asOfDate": "2026-08-06"
       },
       {
@@ -32,8 +32,8 @@
       {
         "symbol": "CAPLIPOINT.NS",
         "price": 2566.10009765625,
-        "currentPrice": 2572,
-        "pnlPercent": 0.23,
+        "currentPrice": 2568.699951171875,
+        "pnlPercent": 0.1,
         "asOfDate": "2026-08-06"
       },
       {
@@ -47,22 +47,22 @@
       {
         "symbol": "CUMMINSIND.NS",
         "price": 5550,
-        "currentPrice": 5382.5,
-        "pnlPercent": -3.02,
+        "currentPrice": 5398.5,
+        "pnlPercent": -2.73,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "DATAPATTNS.NS",
         "price": 4428.7998046875,
-        "currentPrice": 4350.60009765625,
-        "pnlPercent": -1.77,
+        "currentPrice": 4320,
+        "pnlPercent": -2.46,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "ELGIEQUIP.NS",
         "price": 582.5999755859375,
-        "currentPrice": 590.6500244140625,
-        "pnlPercent": 1.38,
+        "currentPrice": 589.8499755859375,
+        "pnlPercent": 1.24,
         "asOfDate": "2026-08-06"
       },
       {
@@ -72,15 +72,15 @@
       {
         "symbol": "HINDALCO.NS",
         "price": 994.9000244140625,
-        "currentPrice": 1023.4500122070312,
-        "pnlPercent": 2.87,
+        "currentPrice": 1024.050048828125,
+        "pnlPercent": 2.93,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "JSWINFRA.NS",
         "price": 329,
-        "currentPrice": 331.29998779296875,
-        "pnlPercent": 0.7,
+        "currentPrice": 330.95001220703125,
+        "pnlPercent": 0.59,
         "asOfDate": "2026-08-06"
       },
       {
@@ -101,22 +101,22 @@
       {
         "symbol": "NATIONALUM.NS",
         "price": 369,
-        "currentPrice": 379.1499938964844,
-        "pnlPercent": 2.75,
+        "currentPrice": 378.79998779296875,
+        "pnlPercent": 2.66,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "OBEROIRLTY.NS",
         "price": 1861.0999755859375,
-        "currentPrice": 1788.4000244140625,
-        "pnlPercent": -3.91,
+        "currentPrice": 1795.800048828125,
+        "pnlPercent": -3.51,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "PRESTIGE.NS",
         "price": 1670,
-        "currentPrice": 1611,
-        "pnlPercent": -3.53,
+        "currentPrice": 1591.0999755859375,
+        "pnlPercent": -4.72,
         "asOfDate": "2026-08-06"
       }
     ],
@@ -193,113 +193,113 @@
       {
         "symbol": "APOLLOHOSP.NS",
         "price": 9050,
-        "currentPrice": 8992.5,
-        "pnlPercent": -0.64,
+        "currentPrice": 8971.5,
+        "pnlPercent": -0.87,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "CEATLTD.NS",
         "price": 3611.199951171875,
-        "currentPrice": 3684.10009765625,
-        "pnlPercent": 2.02,
+        "currentPrice": 3702.699951171875,
+        "pnlPercent": 2.53,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "COROMANDEL.NS",
         "price": 2115.5,
-        "currentPrice": 2081.10009765625,
-        "pnlPercent": -1.63,
+        "currentPrice": 2069.800048828125,
+        "pnlPercent": -2.16,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "CREDITACC.NS",
         "price": 1557.5999755859375,
-        "currentPrice": 1541.800048828125,
-        "pnlPercent": -1.01,
+        "currentPrice": 1537.0999755859375,
+        "pnlPercent": -1.32,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "DELHIVERY.NS",
         "price": 482,
-        "currentPrice": 472.5,
-        "pnlPercent": -1.97,
+        "currentPrice": 470.6499938964844,
+        "pnlPercent": -2.35,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "DIXON.NS",
         "price": 13988,
-        "currentPrice": 14345,
-        "pnlPercent": 2.55,
+        "currentPrice": 14295,
+        "pnlPercent": 2.19,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "HCLTECH.NS",
         "price": 1369.9000244140625,
-        "currentPrice": 1340.4000244140625,
-        "pnlPercent": -2.15,
+        "currentPrice": 1337.800048828125,
+        "pnlPercent": -2.34,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "HINDZINC.NS",
         "price": 562.9000244140625,
-        "currentPrice": 596.2000122070312,
-        "pnlPercent": 5.92,
+        "currentPrice": 596.3499755859375,
+        "pnlPercent": 5.94,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "JINDALSTEL.NS",
         "price": 1124,
-        "currentPrice": 1115.5,
-        "pnlPercent": -0.76,
+        "currentPrice": 1102.199951171875,
+        "pnlPercent": -1.94,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "JIOFIN.NS",
         "price": 265,
-        "currentPrice": 263.3500061035156,
-        "pnlPercent": -0.62,
+        "currentPrice": 263.5,
+        "pnlPercent": -0.57,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "NSLNISP.NS",
         "price": 44.0099983215332,
-        "currentPrice": 44.9900016784668,
-        "pnlPercent": 2.23,
+        "currentPrice": 44.970001220703125,
+        "pnlPercent": 2.18,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "PNBHOUSING.NS",
         "price": 1080,
-        "currentPrice": 1161,
-        "pnlPercent": 7.5,
+        "currentPrice": 1155.5,
+        "pnlPercent": 6.99,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "SBILIFE.NS",
         "price": 1899,
-        "currentPrice": 1877.4000244140625,
-        "pnlPercent": -1.14,
+        "currentPrice": 1875.699951171875,
+        "pnlPercent": -1.23,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "SAREGAMA.NS",
         "price": 542.5499877929688,
-        "currentPrice": 529.8499755859375,
-        "pnlPercent": -2.34,
+        "currentPrice": 530.5,
+        "pnlPercent": -2.22,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "SAIL.NS",
         "price": 173.5500030517578,
-        "currentPrice": 178.1999969482422,
-        "pnlPercent": 2.68,
+        "currentPrice": 177.32000732421875,
+        "pnlPercent": 2.17,
         "asOfDate": "2026-08-06"
       },
       {
         "symbol": "TEJASNET.NS",
         "price": 533.9500122070312,
-        "currentPrice": 525.5,
-        "pnlPercent": -1.58,
+        "currentPrice": 522.9500122070312,
+        "pnlPercent": -2.06,
         "asOfDate": "2026-08-06"
       }
     ],
@@ -421,33 +421,65 @@
     "date": "2026-08-06",
     "buy": [
       {
-        "symbol": "AIAENG.NS",
-        "price": 4687.7998046875,
-        "currentPrice": 4687.7998046875,
+        "symbol": "AADHARHFC.NS",
+        "price": 507.5,
+        "currentPrice": 507.5,
         "pnlPercent": 0,
         "asOfDate": "2026-08-06"
       },
       {
-        "symbol": "BIOCON.NS",
-        "price": 428.6499938964844,
-        "currentPrice": 428.6499938964844,
+        "symbol": "ADANIENT.NS",
+        "price": 3064.89990234375,
+        "currentPrice": 3064.89990234375,
         "pnlPercent": 0,
         "asOfDate": "2026-08-06"
       },
       {
-        "symbol": "JSWCEMENT.NS",
-        "price": 134.22999572753906,
-        "currentPrice": 134.22999572753906,
+        "symbol": "KAJARIACER.NS",
+        "price": 1187.5999755859375,
+        "currentPrice": 1187.5999755859375,
+        "pnlPercent": 0,
+        "asOfDate": "2026-08-06"
+      },
+      {
+        "symbol": "KIRLOSENG.NS",
+        "price": 2228.699951171875,
+        "currentPrice": 2228.699951171875,
+        "pnlPercent": 0,
+        "asOfDate": "2026-08-06"
+      },
+      {
+        "symbol": "LUPIN.NS",
+        "price": 2410.60009765625,
+        "currentPrice": 2410.60009765625,
         "pnlPercent": 0,
         "asOfDate": "2026-08-06"
       }
     ],
     "sell": [
       {
-        "symbol": "KAJARIACER.NS",
-        "price": 1180.300048828125,
-        "entryPrice": 1214.699951171875,
-        "pnlPercent": -2.83
+        "symbol": "BIKAJI.NS",
+        "price": 627.8499755859375
+      },
+      {
+        "symbol": "ITC.NS",
+        "price": 284.25
+      },
+      {
+        "symbol": "NHPC.NS",
+        "price": 77.75
+      },
+      {
+        "symbol": "TATAINVEST.NS",
+        "price": 667.7999877929688
+      },
+      {
+        "symbol": "UCOBANK.NS",
+        "price": 26.469999313354492
+      },
+      {
+        "symbol": "WELSPUNLIV.NS",
+        "price": 159.77999877929688
       }
     ]
   }
