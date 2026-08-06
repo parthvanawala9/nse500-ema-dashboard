@@ -1,0 +1,39 @@
+name: NSE 500 SMA Scanner
+
+on:
+  schedule:
+    # 4:30 PM IST = 11:00 UTC, Monday-Friday.
+    # GitHub Actions cron always runs in UTC - there is no timezone field.
+    - cron: '0 11 * * 1-5'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab too
+
+permissions:
+  contents: write   # needed so the job can commit & push data/ changes
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run scanner
+        run: node scripts/scan.js
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/scanner.json data/history.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update scanner data - $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
